@@ -27,13 +27,12 @@ let placesOfInterest = [
 
 function addMarkerToMap(map) {
 
-    for (var i = 0; i < placesOfInterest.length; i++) {
+    for (let i = 0; i < placesOfInterest.length; i++) {
 
-        var place = placesOfInterest[i];
-        var marker = new google.maps.Marker({
+        let place = placesOfInterest[i];
+        let marker = new google.maps.Marker({
             position: { lat: place[1], lng: place[2] },
             map: map,
-            title: place[0]
         });
 
         let infoWindow = new google.maps.InfoWindow({
