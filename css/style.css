@@ -2,3 +2,24 @@
     height: 400px;
     width: 100%;
 }
+
+.activity {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 2em;
+    display: inline-block;
+    border: solid;
+    border-color: blue;
+    border-radius: 15px;
+    background-color: white;
+    height: 200px;
+    width: 300px;;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.activities-container {
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
