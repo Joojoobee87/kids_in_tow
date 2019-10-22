@@ -8,11 +8,11 @@ $(document).ready(function() {
         let activity = $('.activity');
         let applyFilter = $('.apply');
 
-        activity.hide();
+        activity.show();
 
         button.on('click', function() {
-            $(this).toggleClass('red');
             $('.' + this.id).toggle();
+            $(this).toggleClass('red');
         });
 
     }
