@@ -1,4 +1,7 @@
 /*----------Navigation------------*/
+.kit-navbar {
+    margin: 0 0 0 0;
+}
 
 .kit-brand {
     font-family: 'Indie Flower', cursive;
@@ -8,7 +11,7 @@
     height: 150px;
     padding: 30px;
     display: inline-block;
-    background-color: #86A397;
+    background-color: #4F756B;
 }
 .kit-brand span {
     display: inline-block;
@@ -29,10 +32,16 @@
     width: 100%;
 }
 
+.map-container {
+    width: 80%;
+    margin: auto;
+}
+
 /*-----------Main Body-------------*/
 
 .body{
-    margin-top: 60px;
+    margin: 0 0 0 0;
+    display: block;
 }
 
 /*-----------Filters---------------*/
@@ -45,9 +54,7 @@
 }
 
 .filters-container{
-    border: solid;
-    border-color: blue;
-    background-color: lightblue;
+    background-color: #90AFA2;
     max-width: 100%;
 }
 
