@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function filterActivity() {
 
-        let button = $('.btn');
+        let button = $('.button');
         let activity = $('.activity');
         let applyFilter = $('.apply');
 
