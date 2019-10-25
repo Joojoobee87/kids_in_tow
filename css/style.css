@@ -51,6 +51,13 @@
     border: solid;
     border-color: white;
     border-radius: 15px;
+    background-color: #EF6F6C;
+}
+
+i {
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
 }
 
 .filters-container{
