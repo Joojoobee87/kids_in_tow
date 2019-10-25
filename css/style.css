@@ -54,6 +54,10 @@
     background-color: #EF6F6C;
 }
 
+.button-desc{
+    color: white;
+}
+
 i {
     color: white;
     font-family: 'Nunito', sans-serif;
