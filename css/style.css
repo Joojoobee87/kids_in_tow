@@ -29,6 +29,23 @@
     text-decoration: none;
 }
 
+/*------------Slideshow-----------*/
+
+.slideshow-section {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.slideshow-container{
+    display: flex;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
 /*-----------Google Map-----------*/
 
 .map-section {
