@@ -18,28 +18,29 @@
 	<title>Kids in Tow</title>
 </head>
 
+<!------------------Header--------------->
+
+<header>
+	<div class="nav-section">
+		<div class="nav-container">
+			<div class="kit-brand">
+				<a class="kit-anchor" href="index.html">KIT</a>
+				<span>Kids in tow...off we go!!</span>
+			</div>
+		</div>
+	</div>
+
+</header>
+
+<!-----------------Body------------------>
+
 <body>
-	<!------------------Header--------------->
 
-	<nav class="kit-navbar">
-		<div class="kit-brand">
-			<a class="kit-anchor" href="index.html">KIT</a>
-			<span>Kids in tow...off we go!!</span>
-		</div>
-		<div class="kit-tagline">
+	<!----------------Filters---------------->
 
-		</div>
-	</nav>
-
-
-	<!-----------------Body------------------>
-	<div class="body">
-
-		<!----------------Filters---------------->
-
+	<div class="filters-section">
 		<div class="filters-container">
-
-			<div class="filter-section activity-filter">
+			<div class="activity-filter">
 				<h6>Activity filter section</h6>
 				<button class="button activity-btn" id="1">
                     <i class="fa fa-star"></i><span class="button-desc">Featured</span>
@@ -58,22 +59,26 @@
                 </button>
 			</div>
 
-			<div class="filter-section location-filter">
+			<div class="location-filter">
 				<h6>Apply filters section</h6>
 				<button class="btn apply-btn">Apply Filters</button>
 			</div>
-
 		</div>
+	</div>
 
-		<!----------------Google Map------------->
+	<!----------------Google Map------------->
 
-		<h1>My Google Map</h1>
+	<div class="map-section">
 		<div class="map-container">
+			<h1>My Google Map</h1>
+
 			<div id="map"></div>
 		</div>
+	</div>
 
-		<!----------------Activities------------->
+	<!----------------Activities------------->
 
+	<div class="activities-section">
 		<div class="activities-container">
 			<div class="activity 1">
 				<h1>Activity 1</h1>
@@ -102,136 +107,135 @@
 
 			</div>
 		</div>
+	</div>
+	<!--------------------------Modals--------------------->
 
-		<!--------------------------Modals--------------------->
-
-		<!-- Button trigger modal -->
+	<!-- Button trigger modal -->
 
 
-		<!-- Modal -->
-		<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal 1</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<!-- Modal -->
+	<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal 1</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-					</div>
-					<div class="modal-body">
-						Content of Modal 1
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
+				</div>
+				<div class="modal-body">
+					Content of Modal 1
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-		<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal 2</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal 2</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-					</div>
-					<div class="modal-body">
-						Content of Modal 2
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
+				</div>
+				<div class="modal-body">
+					Content of Modal 2
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-		<div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal 3</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal 3</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-					</div>
-					<div class="modal-body">
-						Content of Modal 3
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
+				</div>
+				<div class="modal-body">
+					Content of Modal 3
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-		<div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal 4</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal 4</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-					</div>
-					<div class="modal-body">
-						Content of Modal 4
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
+				</div>
+				<div class="modal-body">
+					Content of Modal 4
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-------------Font Aewsome Glyphicons-->
-		<div>
-			<i class="fa fa-sun">Sun - use for outdoors</i>
-			<i class="fa fa-warehouse">Building - use for indoors</i>
-			<i class="fa fa-utensils">Cafe</i>
-			<i class="fa fa-parking">Parking</i>
-			<i class="fa fa-leaf">Woodland</i>
-			<i class="fab fa-accessible-icon">Accessible</i>
-			<i class="fa fa-running"></i>
-			<i class="fa fa-exclamation">Adventure / challenge</i>
-			<i class="fa fa-angle-double-up"></i>
-			<i class="fa fa-star">Featured</i>
+	<!-------------Font Aewsome Glyphicons-->
+	<div>
+		<i class="fa fa-sun">Sun - use for outdoors</i>
+		<i class="fa fa-warehouse">Building - use for indoors</i>
+		<i class="fa fa-utensils">Cafe</i>
+		<i class="fa fa-parking">Parking</i>
+		<i class="fa fa-leaf">Woodland</i>
+		<i class="fab fa-accessible-icon">Accessible</i>
+		<i class="fa fa-running"></i>
+		<i class="fa fa-exclamation">Adventure / challenge</i>
+		<i class="fa fa-angle-double-up"></i>
+		<i class="fa fa-star">Featured</i>
 
-			<!-----------Facilities---------------->
+		<!-----------Facilities---------------->
 
-			<i class="fa fa-baby">Baby changing</i>
-			<i class="fa fa-binoculars">Binoculars</i>
-			<i class="fa fa-baby-carriage">Baby carriage</i>
-			<i class="fa fa-pound-sign">Pound sign</i>
-			<i class="fa fa-tree">Tree</i>
-			<i class="fa fa-shopping-cart">Shopping cart</i>
-			<i class="fa fa-coffee">Coffee</i>
-			<i class="fa fa-restroom">Restroom</i>
-			<i class="fab fa-medium">Membership</i>
-			<i class="fa fa-info-circle">Information</i>
-			<i class="fa fa-ice-cream">Icecream</i>
-			<i class="fa fa-credit-card">Credit card</i>
-			<i class="fa fa-wifi">WiFi</i>
-			<i class="fa fa-gift">Gift shop</i>
-			<i class="fa fa-bicycle">Bicycle</i>
-			<i class="fa fa-paw">Paws</i>
-
-
-		</div>
-
-
-
+		<i class="fa fa-baby">Baby changing</i>
+		<i class="fa fa-binoculars">Binoculars</i>
+		<i class="fa fa-baby-carriage">Baby carriage</i>
+		<i class="fa fa-pound-sign">Pound sign</i>
+		<i class="fa fa-tree">Tree</i>
+		<i class="fa fa-shopping-cart">Shopping cart</i>
+		<i class="fa fa-coffee">Coffee</i>
+		<i class="fa fa-restroom">Restroom</i>
+		<i class="fab fa-medium">Membership</i>
+		<i class="fa fa-info-circle">Information</i>
+		<i class="fa fa-ice-cream">Icecream</i>
+		<i class="fa fa-credit-card">Credit card</i>
+		<i class="fa fa-wifi">WiFi</i>
+		<i class="fa fa-gift">Gift shop</i>
+		<i class="fa fa-bicycle">Bicycle</i>
+		<i class="fa fa-paw">Paws</i>
 
 
 	</div>
+
+
+
+
+
 
 	<!-- //API key = AIzaSyBwYTzj-ACDYiP5jf_YIMKSmE70X9nwOBk -->
 
