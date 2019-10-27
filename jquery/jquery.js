@@ -17,4 +17,20 @@ $(document).ready(function() {
 
     }
 
+    function autoSlide() {
+
+        let slides = $('.slides');
+        let slideIndex = 0;
+        let i;
+
+        console.log(slides);
+
+        for (i = 0; i < slides.length; i++) {
+            $(slides[i]).css("display", "none");
+        }
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        $(slides[slideIndex - 1]).css("display", "block");
+        setTimeout(autoSlide, 3000);
+    }
+
 });
