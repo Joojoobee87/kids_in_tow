@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     filterActivity();
 
+
     function filterActivity() {
 
         let button = $('.button');
@@ -20,17 +21,25 @@ $(document).ready(function() {
     function autoSlide() {
 
         let slides = $('.slides');
+        console.log(slides);
         let slideIndex = 0;
+        console.log(slideIndex);
         let i;
+        console.log(i);
 
         console.log(slides);
 
         for (i = 0; i < slides.length; i++) {
-            $(slides[i]).css("display", "none");
+            console.log(i);
+            $(slides[i]).css("display", "block");
+            console.log(slides[i]);
         }
+        slideIndex++;
+        console.log(slides[i]);
         if (slideIndex > slides.length) { slideIndex = 1 }
-        $(slides[slideIndex - 1]).css("display", "block");
-        setTimeout(autoSlide, 3000);
+
+        $(slides[i]).css("display", "none");
+        setTimeout(autoSlide, 2000); // Change image every 2 seconds
     }
 
 });
