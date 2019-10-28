@@ -152,4 +152,12 @@ i {
 
 
 
+/*----------------Modals-----------------*/
 
+.modal-content {
+    width: calc(100vw - 1rem) !important;
+}
+
+.modal-dialogue {
+    text-align: center !important;
+}
