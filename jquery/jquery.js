@@ -1,22 +1,26 @@
 $(document).ready(function() {
 
-    filterActivity();
-
-
-    function filterActivity() {
+    function filterSelected() {
 
         let button = $('.button');
         let activity = $('.activity');
         let applyFilter = $('.apply');
 
-        activity.show();
+        activity.hide();
 
         button.on('click', function() {
-            $('.' + this.id).toggle();
-            $(this).toggleClass('red');
+            $(this).addClass('highlight');
+            $('.' + this.id).show();
+            button.on('click', function() {
+                $(this).removeClass('highlight');
+                $('.' + this.id).hide();
+                filterSelected();
+            })
         });
-
     }
+    filterSelected();
+
+
 
     function autoSlide() {
 

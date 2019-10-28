@@ -97,6 +97,10 @@ body {
     background-color: #EF6F6C;
 }
 
+.highlight {
+    background-color: lime;
+}
+
 .button-desc{
     color: white;
 }
@@ -107,9 +111,6 @@ i {
     font-size: 18px;
 }
 
-.red {
-    background-color: red;
-}
 
 /*-----------Activities------------*/
 
