@@ -2,31 +2,48 @@
 
 .nav-section{
     display: block;
+    position: relative;
     float: left;
     width: 100%;
+    height: 120px;
     background-color: #4F756B;
 }
 
 .nav-container{
-    display: inline-block;
+    display: flex;
+    position: relative;
+    float: left;
+    height: 100%;
 }
 
 .kit-brand {
+    display: flex;
+    position: relative;
+    max-height: 100px;
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
     font-weight: 100;
-    height: 150px;
-    padding: 30px;
+    padding: 15px;
 }
+
 .kit-brand span {
     display: inline-block;
+    position: relative;
+    margin-left: 40px;
+    padding-top: 30px;
     font-size: 25px;
+    color: white;
     text-align: center;
 }
 
-.kit-anchor {
+.kit-brand a {
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin-left: 30px;
     color: #EF6F6C;
     text-decoration: none;
+    font-size: 80px;
 }
 
 /*------------Slideshow-----------*/
@@ -90,14 +107,21 @@ body {
     display: inline-block;
     width: 80%;
     margin: auto;
+    padding-left: 20px;
 }
 
 .button {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif !important;
+    padding: 5px;
     border: solid;
-    border-color: white;
+    border-color:#EF6F6C;
     border-radius: 15px;
     background-color: #EF6F6C;
+    margin: 3px;
+}
+
+.button-desc {
+    padding-left: 10px;
 }
 
 .highlight {
@@ -196,7 +220,9 @@ i {
   right: 0%;
   margin-bottom: 10px;
   margin-right: 10px;
-  background-color: pink;
+  background-color: #EF6F6C !important;
+  border-color: white !important;
+  border-radius: 15px !important;
   color: black;
   font-family: 'Nunito', sans-serif;
   font-size: 12px;
