@@ -127,7 +127,7 @@ i {
     padding-right: 50px;
 }
 
-.activity {
+.activities {
     font-family: 'Nunito', sans-serif;
     font-weight: 2em;
     display: inline-block;
@@ -151,6 +151,35 @@ i {
 }
 
 
+/*------------New activity section----------------*/
+
+.activity-main-section {
+    max-width: 80%;
+    margin: auto;
+}
+
+.activity-section {
+    position: relative;
+    min-height: 280px;
+    max-height: 280px;
+    margin-top: 50px;
+    border-bottom: 2px solid black;
+    margin: 2px 0 0 0;
+}
+
+.activity {
+    display: block;
+    overflow: hidden;
+    max-height:280px;
+      background: -webkit-linear-gradient(top, black 70%, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.activity img {
+    margin-right: 15px;
+    float: left;
+}
 
 /*----------------Modals-----------------*/
 
