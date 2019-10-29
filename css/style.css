@@ -155,9 +155,19 @@ i {
 /*----------------Modals-----------------*/
 
 .modal-content {
-    width: calc(100vw - 1rem) !important;
+    padding: 50px;
+    font-family: 'Nunito', sans-serif !important;
 }
 
-.modal-dialogue {
-    text-align: center !important;
+.modal-dialog {
+    margin-top: 100px !important;
+    max-width: 80% !important;
+}
+
+.modal-header {
+    border-bottom:2px solid #EF6F6C !important;
+}
+
+.modal-footer {
+    border-top:2px solid #EF6F6C !important;
 }
