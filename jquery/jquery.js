@@ -3,7 +3,7 @@ $(document).ready(function() {
     function filterSelected() {
 
         let button = $('.button');
-        let activity = $('.activity');
+        let activity = $('.activities');
         let applyFilter = $('.apply');
 
         activity.hide();

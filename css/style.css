@@ -42,7 +42,7 @@
     width: 100%;
 }
 
-img {
+.slides img {
     width: 100%;
 }
 
@@ -50,6 +50,7 @@ img {
 
 .map-section {
     display: block;
+    position: relative;
     float: left;
     text-align: center;
     width: 100%;
@@ -71,6 +72,7 @@ img {
 body {
     margin: 0 0 0 0;
     display: block;
+    position: relative;
     float: left;
 }
 
@@ -78,6 +80,7 @@ body {
 
 .filters-section {
     display: block;
+    position: relative;
     float: left;
     width: 100%;
     background-color: #90AFA2;
@@ -153,9 +156,12 @@ i {
 
 /*------------New activity section----------------*/
 
-.activity-main-section {
-    max-width: 80%;
-    margin: auto;
+.main-section {
+    display: block;
+    position: relative;
+    float: left;
+    max-width: 100%;
+    margin-top: 50px;
 }
 
 .activity-section {
@@ -164,16 +170,8 @@ i {
     max-height: 280px;
     margin-top: 50px;
     border-bottom: 2px solid black;
-    margin: 2px 0 0 0;
-}
-
-.activity {
-    display: block;
-    overflow: hidden;
-    max-height:280px;
-      background: -webkit-linear-gradient(top, black 70%, #eee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    width: 80%;
+    margin: auto;
 }
 
 .activity img {
