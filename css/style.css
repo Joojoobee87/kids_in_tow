@@ -213,6 +213,17 @@ i {
   -webkit-text-fill-color: transparent;
 }
 
+.activity h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    color: #4F756B !important;
+
+}
+
+.activity p {
+    font-family: 'Nunito', sans-serif;
+}
+
 .more-info {
   position: absolute;
   z-index: 1;
@@ -229,6 +240,7 @@ i {
   padding: 5px;
   border-radius: 15px;
 }
+
 
 /*----------------Modals-----------------*/
 
@@ -248,4 +260,26 @@ i {
 
 .modal-footer {
     border-top:2px solid #EF6F6C !important;
+}
+
+.modal-header h5 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.font-awesome {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px !important;
+    height: 35px;
+    width: 35px;
+    color: #4F756B;
+    border: solid 2px;
+    border-color: #4F756B;
+    border-radius: 25px;
+    padding: 4px;
+}
+
+.font-awesome i {
+    color: #4F756B;
 }
