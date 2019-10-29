@@ -267,8 +267,14 @@ i {
     font-size: 24px;
 }
 
+.modal-body p {
+    margin-top: 10px;
+}
+
 .font-awesome {
     display: inline-block;
+    position: relative;
+    float: left;
     text-align: center;
     font-size: 16px !important;
     height: 35px;
@@ -277,9 +283,63 @@ i {
     border: solid 2px;
     border-color: #4F756B;
     border-radius: 25px;
-    padding: 4px;
+    padding: 6px;
+    margin: 0;
 }
 
 .font-awesome i {
     color: #4F756B;
+}
+
+.facilities {
+    display: inline-block;
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: black;
+    margin-left: 10px;
+}
+
+.facilties-container {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 10px 10px;
+}
+
+/*---------Visible for info only - remove from site---------*/
+.icons-section {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+td > i {
+    color: black;
+    display: inline-block;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 16px !important;
+    height: 35px;
+    width: 35px;
+    color: #4F756B;
+    border: solid 2px;
+    border-color: #4F756B;
+    border-radius: 25px;
+    padding: 6px 4px;
+}
+
+table {
+    border: none !important;
+}
+
+th {
+    border: none !important;
+}
+
+td {
+    border: none !important;
+    padding: 3px !important;
 }
