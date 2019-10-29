@@ -110,7 +110,7 @@ The project uses JQuery to simplify DOM manipulation.
 Bootstrap CSS and Javascript, including:
 <ul>
 <li>Table containing font aewsome icons
-<li>
+<li>Modal boxes
 </ul>
 
 <h3>Google Fonts</h3>
