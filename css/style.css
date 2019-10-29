@@ -165,10 +165,10 @@ i {
 }
 
 .activity-section {
+    display: block;
     position: relative;
-    min-height: 280px;
-    max-height: 280px;
-    margin-top: 50px;
+    min-height: 300px;
+    max-height: 300px;
     border-bottom: 2px solid black;
     width: 80%;
     margin: auto;
@@ -177,6 +177,31 @@ i {
 .activity img {
     margin-right: 15px;
     float: left;
+}
+
+.activity {
+    display: block;
+    overflow: hidden;
+    max-height:280px;
+    padding-top: 25px;
+      background: -webkit-linear-gradient(top, black 70%, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.more-info {
+  position: absolute;
+  z-index: 1;
+  bottom: 0%;
+  right: 0%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-color: pink;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 15px;
 }
 
 /*----------------Modals-----------------*/
