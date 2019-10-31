@@ -20,7 +20,7 @@
     display: flex;
     position: relative;
     max-height: 100px;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Gochi Hand', cursive;
     font-size: 50px;
     font-weight: 100;
     padding: 15px;
@@ -221,7 +221,7 @@ i {
 }
 
 .activity p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif !important;
 }
 
 .more-info {
@@ -269,6 +269,12 @@ i {
 
 .modal-body p {
     margin-top: 10px;
+}
+
+.slide-image {
+    display: inline-block;
+    max-width:400px;
+    max-height: 250px;
 }
 
 .font-awesome {
