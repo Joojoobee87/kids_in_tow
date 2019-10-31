@@ -273,8 +273,16 @@ i {
 
 .slide-image {
     display: inline-block;
+    position: relative
     max-width:400px;
     max-height: 250px;
+}
+
+.prev
+.next {
+    display: block;
+    position: absolute;
+    color: red;
 }
 
 .font-awesome {
