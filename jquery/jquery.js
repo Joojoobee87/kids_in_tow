@@ -49,38 +49,37 @@ $(document).ready(function() {
     function slideshow() {
 
         let images = Array.from($(".modal-image > img"));
-        let currentImages = this.images;
         let nextButton = $(".next");
         let prevButton = $(".prev");
         let index = 1;
+        let currentImages = $(this.images);
 
-        $(currentImages[0]).css("display", "block");
+        $(images[0]).css("display", "block");
 
         $(nextButton).on('click', function() {
-            for (i = 0; i < currentImages.length; i++) {
+            for (i = 0; i < images.length; i++) {
                 $(images[i]).css("display", "none");
             }
             index++;
-            if (index > currentImages.length - 1) {
-                $(currentImages[currentImages.length - 1]).css("display", "block");
+            if (index > images.length - 1) {
+                $(images[images.length - 1]).css("display", "block");
                 index = 0;
                 return false;
             }
-            $(currentImages[index - 1]).css("display", "block");
+            $(images[index - 1]).css("display", "block");
         })
 
         $(prevButton).on('click', function() {
-            for (i = 0; i < currentImages.length; i++) {
+            for (i = 0; i < images.length; i++) {
                 $(images[i]).css("display", "none");
             }
             index--;
             if (index < 1) {
-                $(currentImages[currentImages.length + 1]).css("display", "block");
-                index = currentImages.length
+                $(images[images.length + 1]).css("display", "block");
+                index = images.length
             }
-            $(currentImages[index - 1]).css("display", "block");
+            $(images[index - 1]).css("display", "block");
         })
     }
     slideshow();
-
 });
