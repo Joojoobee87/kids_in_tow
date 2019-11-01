@@ -54,6 +54,9 @@ $(document).ready(function() {
         let index = 1;
         let currentImages = $(this.images);
 
+        console.log(images);
+        console.log($(images).parent());
+
         $(images[0]).css("display", "block");
 
         $(nextButton).on('click', function() {
