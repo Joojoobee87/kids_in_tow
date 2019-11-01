@@ -50,17 +50,22 @@
 
 .slideshow-section {
     display: block;
-    float: left;
     width: 100%;
+    background-color: red;
 }
 
 .slideshow-container{
     display: flex;
+    position: relative;
     width: 100%;
+    background-size: cover;
+    background-color: blue;
 }
 
 .slides img {
-    width: 100%;
+    width:100%;
+    height:auto;
+    max-height:100%;
     object-fit: cover;
 }
 
