@@ -48,7 +48,7 @@
 
 /*-------------Dropdown Tab section--------------*/
 
-.tab-container {
+.tabs {
     display: block;
     position: absolute;
     z-index: 1;
@@ -145,18 +145,31 @@ body {
 
 /*-----------Filters---------------*/
 
-.filters-section {
-    display: block;
+.filters-container{
+    display: none;
     position: relative;
     float: left;
     width: 100%;
+    padding: 20px;
     background-color: #90AFA2;
 }
 
-.filters-container{
+.about-container {
     display: none;
-    width: 80%;
+    position: relative;
+    float: left;
+    width: 100%;
     padding: 20px;
+    background-color: #FE7F2D;
+}
+
+.contact-container {
+    display: none;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    background-color: #EF6F6C;
 }
 
 .button {

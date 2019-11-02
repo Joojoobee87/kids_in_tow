@@ -60,10 +60,17 @@ $(document).ready(function() {
     }
     slideshow();
 
-    function dropdownFilters() {
+    function dropdownContainers() {
+        $(".tab-container").css("display", "none");
         $(".filters-tab").click(function() {
             $(".filters-container").slideToggle();
         })
+        $(".about-tab").click(function() {
+            $(".about-container").slideToggle();
+        })
+        $(".contact-tab").click(function() {
+            $(".contact-container").slideToggle();
+        })
     }
-    dropdownFilters();
+    dropdownContainers();
 })
