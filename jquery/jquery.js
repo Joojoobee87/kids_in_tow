@@ -61,14 +61,16 @@ $(document).ready(function() {
     slideshow();
 
     function dropdownContainers() {
-        $(".tab-container").css("display", "none");
         $(".filters-tab").click(function() {
+            $(".tab-container").css("display", "none");
             $(".filters-container").slideToggle();
         })
         $(".about-tab").click(function() {
+            $(".tab-container").css("display", "none");
             $(".about-container").slideToggle();
         })
         $(".contact-tab").click(function() {
+            $(".tab-container").css("display", "none");
             $(".contact-container").slideToggle();
         })
     }
