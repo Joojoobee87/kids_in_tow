@@ -46,10 +46,48 @@
     font-size: 80px;
 }
 
+/*-------------Dropdown Tab section--------------*/
+
+.tab-container {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    height: 30px;
+    background-color: transparent;
+    margin: auto;
+    text-align: center;
+}
+
+.tab {
+    display: inline-block;
+    float: top;
+    z-index: 1;
+    width: 80px;
+    height: 30px;
+    border-radius: 0px 0px 15px 15px;
+    color: white;
+}
+
+.filters-tab {
+    background-color: #90AFA2;
+}
+
+.about-tab {
+    background-color: #FE7F2D;
+}
+
+.contact-tab {
+    background-color: #EF6F6C;
+}
+
+
+
 /*------------Slideshow-----------*/
 
 .slideshow-section {
     display: block;
+    position: relative;
+    float: left;
     width: 100%;
     background-color: red;
 }
@@ -62,7 +100,13 @@
     background-color: blue;
 }
 
+.slides {
+    display: block;
+    position: relative;
+}
+
 .slides img {
+    position: relative;
     width:100%;
     height:auto;
     max-height:100%;
@@ -113,7 +157,7 @@ body {
     display: inline-block;
     width: 80%;
     margin: auto;
-    padding-left: 20px;
+    padding: 20px;
 }
 
 .button {
