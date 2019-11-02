@@ -154,9 +154,8 @@ body {
 }
 
 .filters-container{
-    display: inline-block;
+    display: none;
     width: 80%;
-    margin: auto;
     padding: 20px;
 }
 

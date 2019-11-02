@@ -60,11 +60,10 @@ $(document).ready(function() {
     }
     slideshow();
 
-    function dropdownTab() {
-        $(".tab").click(function() {
-            $(".dropdown-section").slideToggle();
-            console.log(".dropdown-section");
+    function dropdownFilters() {
+        $(".filters-tab").click(function() {
+            $(".filters-container").slideToggle();
         })
     }
-    dropdownTab();
+    dropdownFilters();
 })
