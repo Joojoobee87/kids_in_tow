@@ -43,14 +43,12 @@ $(document).ready(function() {
             var modal = $(this)
             console.log(modal);
             let images = Array.from(modal.find('.modal-image').children("img"));
-            console.log(images);
+            $(images).css("display", "none");
+            $(images[0]).css("display", "block");
+
             let nextButton = $(".next");
             let prevButton = $(".prev");
             let index = 1;
-
-            $(images).css("display", "none");
-            $(images[0]).css("display", "block");
-            console.log(images[0]);
 
             $(nextButton).on('click', function() {
                 for (i = 0; i < images.length; i++) {

@@ -80,8 +80,6 @@
     background-color: #EF6F6C;
 }
 
-
-
 /*------------Slideshow-----------*/
 
 .slideshow-section {
@@ -145,30 +143,23 @@ body {
 
 /*-----------Filters---------------*/
 
-.filters-container{
+.tab-container {
     display: none;
     position: relative;
     float: left;
     width: 100%;
     padding: 20px;
+}
+
+.filters-container{
     background-color: #90AFA2;
 }
 
 .about-container {
-    display: none;
-    position: relative;
-    float: left;
-    width: 100%;
-    padding: 20px;
     background-color: #FE7F2D;
 }
 
 .contact-container {
-    display: none;
-    position: relative;
-    float: left;
-    width: 100%;
-    padding: 20px;
     background-color: #EF6F6C;
 }
 
@@ -261,7 +252,7 @@ i {
 }
 
 .activity img {
-    margin-right: 15px;
+    margin-right: 25px;
     float: left;
 }
 
@@ -279,11 +270,12 @@ i {
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     color: #4F756B !important;
-
+    padding-top: 10px;
 }
 
 .activity p {
     font-family: 'Nunito', sans-serif !important;
+    font-size: 18px;
 }
 
 .more-info {
@@ -340,6 +332,7 @@ i {
 }
 
 .slide-image {
+    display: none;
     object-fit: cover;
     max-width: 100%;
     max-height: 100%;
