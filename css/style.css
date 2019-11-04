@@ -210,7 +210,7 @@ i {
     position: relative;
     float: left;
     max-width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .activity-section {
@@ -221,6 +221,7 @@ i {
     border-bottom: 2px solid #4F756B;
   width: 80%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .activity img {
@@ -232,7 +233,11 @@ i {
     display: block;
     overflow: hidden;
     max-height:280px;
-    padding-top: 25px;
+}
+
+.activity p {
+    max-height: 180px;
+    padding-top: 15px;
       background: -webkit-linear-gradient(top, black 70%, #eee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -245,20 +250,28 @@ i {
     padding-top: 10px;
 }
 
-.activity-filter-icons i {
-    color: black;
+.activity-icons-container {
+    color: #EF6F6C !important;
+}
+.activity-icons {
+    display: inline-block;
+    position: relative;
+}
+
+.activity-icons i {
+    color: #EF6F6C!important;
     display: inline-block;
     position: relative;
     float: left;
     text-align: center;
-    font-size: 16px !important;
-    height: 35px;
-    width: 35px;
+    font-size: 10px !important;
+    height: 20px;
+    width: 20px;
     color: #4F756B;
     border: solid 2px;
-    border-color: #4F756B;
-    border-radius: 25px;
-    padding: 6px 4px;
+    border-color: #EF6F6C;
+    border-radius: 50%;
+    padding: 2px 2px;
 }
 
 .activity p {
