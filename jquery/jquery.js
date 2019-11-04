@@ -1,27 +1,5 @@
 $(document).ready(function() {
 
-    let button = $(".filter");
-    let boxes = $(".box");
-
-
-    console.log(button);
-    console.log(boxes);
-
-    boxes.hide();
-
-    function filterSelected() {
-        button.on('click', function() {
-            $(this).addClass('highlight');
-            $('.' + this.id).show();
-            button.on('click', function() {
-                $(this).removeClass('highlight');
-                $('.' + this.id).hide();
-                filterSelected();
-            })
-        });
-    }
-    filterSelected();
-
     function dropdownContainers() {
         $(".filters-tab").click(function() {
             $(".tab-container").css("display", "none");
@@ -79,4 +57,27 @@ $(document).ready(function() {
         })
     }
     modalSlideshow();
+
+    function filterSelected() {
+
+        let button = $(".activity-btn"); // filter buttons
+        console.log(button);
+        let applyButton = $(".apply-filters"); // apply all filters button
+        console.log(applyButton);
+
+        button.on('click', function() {
+            $(this).toggleClass('highlight');
+            console.log(this);
+            let icon = $(this).children("i").attr("class"); // this button <i> class
+            console.log(icon);
+            let icons = $(".highlight").children("i"); // all buttons highlighted, get <i> class
+            console.log(icons);
+            let selectedFilters = $(".highlight"); // shows all selected filters with a class of highlight
+            console.log(selectedFilters);
+
+        });
+
+    }
+    filterSelected();
+
 })
