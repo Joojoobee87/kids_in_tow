@@ -264,14 +264,14 @@ i {
     position: relative;
     float: left;
     text-align: center;
-    font-size: 10px !important;
-    height: 20px;
-    width: 20px;
+    font-size: 15px !important;
+    height: 30px;
+    width: 30px;
     color: #4F756B;
     border: solid 2px;
     border-color: #EF6F6C;
     border-radius: 50%;
-    padding: 2px 2px;
+    padding: 4px 4px;
 }
 
 .activity p {
