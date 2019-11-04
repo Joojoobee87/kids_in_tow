@@ -4,12 +4,60 @@ function initMap() {
 
     let map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 53.802156, lng: -1.548946 },
-        zoom: 10
+        zoom: 10,
+        styles: [
+            {
+                featureType: 'landscape.natural',
+                stylers: [{ color: '#4F756B' }]
+            },
+            {
+                featureType: 'landscape.man_made',
+                stylers: [{ color: '#90AFA2' }]
+            },
+            {
+                featureType: 'transit.station',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#000000' }]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{ color: '#FE7F2D' }]
+            },
+            {
+                featureType: 'road',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#000000' }]
+            },
+            {
+                featureType: 'road',
+                elementType: 'labels',
+                stylers: [{ visibility: 'hidden' }]
+            },
+            {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#000000' }]
+            },
+            {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [{ color: '#8cb369' }]
+            },
+            {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#000000' }]
+            },
+
+        ]
+
     });
 
     let markerLeedsCentre = new google.maps.Marker({
         position: { lat: 53.802156, lng: -1.548946 },
-        map: map
+        map: map,
+        icon: 'http://maps.google.com/mapfiles/kml/pushpin/pink-pushpin.png'
     });
 
     addMarkerToMap(map);
