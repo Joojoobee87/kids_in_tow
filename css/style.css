@@ -46,6 +46,15 @@
     font-size: 80px;
 }
 
+/*-----------Main Body-------------*/
+
+body {
+    margin: 0 0 0 0;
+    display: block;
+    position: relative;
+    float: left;
+}
+
 /*-------------Dropdown Tab section--------------*/
 
 .tabs {
@@ -82,7 +91,7 @@
 
 /*------------Slideshow-----------*/
 
-.slideshow-section {
+.homepage-image-section {
     display: block;
     position: relative;
     float: left;
@@ -90,7 +99,7 @@
     background-color: red;
 }
 
-.slideshow-container{
+.homepage-image-container{
     display: flex;
     position: relative;
     width: 100%;
@@ -101,44 +110,15 @@
 .slides {
     display: block;
     position: relative;
+    width: 100%;
 }
 
-.slides img {
+.homepage-slide img {
     position: relative;
     width:100%;
     height:auto;
     max-height:100%;
     object-fit: cover;
-}
-
-/*-----------Google Map-----------*/
-
-.map-section {
-    display: block;
-    position: relative;
-    float: left;
-    text-align: center;
-    width: 100%;
-}
-
-.map-container {
-    display: inline-block;
-    width: 80%;
-    margin: auto;
-}
-
-#map {
-    height: 400px;
-    width: 100%;
-}
-
-/*-----------Main Body-------------*/
-
-body {
-    margin: 0 0 0 0;
-    display: block;
-    position: relative;
-    float: left;
 }
 
 /*-----------Filters---------------*/
@@ -200,8 +180,26 @@ i {
 }
 
 
-/*-----------Activities------------*/
+/*-----------Google Map-----------*/
 
+.map-section {
+    display: block;
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+
+.map-container {
+    display: inline-block;
+    width: 80%;
+    margin: auto;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
 
 /*------------New activity section----------------*/
 
