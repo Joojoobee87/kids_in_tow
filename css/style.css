@@ -35,7 +35,6 @@
     text-decoration: none;
     font-family: 'Gochi Hand', cursive;
     font-size: 100px;
-    font-weight: 100;
 }
 
 .kit-tagline span {
@@ -203,6 +202,60 @@ i {
     width: 100%;
 }
 
+/*--------------Responsive Design-----------------*/
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 400px) {
+    .activity img {
+        display: block;
+        position: relative;
+        width: 300px;
+        height: 200px;
+        max-width: 100%;
+    }
+
+    .activity-section {
+        display: block;
+        position: relative;
+        min-height: 300px;
+        max-height: 600px;
+        border-bottom: 2px solid #FE7F2D;
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .activity h3 {
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 401px) and (max-device-width: 600px) {
+    .activity img {
+        display: block;
+        position: relative;
+        float: left;
+        width: 450px;
+        height: 300px;
+        max-width: 100%;
+    }
+
+    .activity-section {
+        display: block;
+        position: relative;
+        min-height: 600px;
+        border-bottom: 2px solid #FE7F2D;
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .activity-content {
+        display: block;
+        width: 100%;
+    }
+}
+
 /*------------New activity section----------------*/
 
 .main-section {
@@ -219,23 +272,33 @@ i {
     min-height: 300px;
     max-height: 300px;
     border-bottom: 2px solid #FE7F2D;
-  width: 80%;
+    width: 80%;
     margin: auto;
     margin-top: 20px;
 }
 
+.activity-content {
+    display: inline-block;
+    position: relative;
+    float: left;
+    max-width: 60%;
+}
+
 .activity img {
+    display: inline-block;
+    position: relative;
     margin-right: 25px;
     float: left;
 }
 
 .activity {
-    display: block;
+    display: inline-block;
     overflow: hidden;
-    max-height:280px;
+    height:280px;
 }
 
 .activity p {
+    display: inline-block;
     max-height: 180px;
     padding-top: 15px;
       background: -webkit-linear-gradient(top, black 70%, #eee);
