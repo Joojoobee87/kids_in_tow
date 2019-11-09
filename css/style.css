@@ -205,6 +205,14 @@ i {
 /*--------------Responsive Design-----------------*/
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 400px) {
+
+    .activity-section {
+        display: block;
+        position: relative;
+        min-height: 300px;
+        max-height: 600px;
+    }
+
     .activity img {
         display: block;
         position: relative;
@@ -213,47 +221,86 @@ i {
         max-width: 100%;
     }
 
-    .activity-section {
-        display: block;
-        position: relative;
-        min-height: 300px;
-        max-height: 600px;
-        border-bottom: 2px solid #FE7F2D;
-        width: 80%;
-        margin: auto;
-        margin-top: 20px;
-    }
-
     .activity h3 {
         font-size: 20px;
     }
 
 }
 
-@media only screen and (min-width: 401px) and (max-device-width: 600px) {
+@media only screen and (min-device-width: 401px) and (max-device-width: 600px) {
+
+    .activity-section {
+        display: block;
+        position: relative;
+        min-height: 400px !important;
+        max-height: 500px;
+        overflow: hidden;
+    }
+
     .activity img {
         display: block;
         position: relative;
-        float: left;
+        width: 400px;
+        height: 267px;
+        max-width: 100%;
+    }
+
+    .activity {
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .activity-content {
+    }
+
+    .activity h3 {
+        font-size: 20px;
+    }
+
+    .activity p {
+        font-size: 12px;
+        background: -webkit-linear-gradient(top, black 70%, #eee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        height: 120px;
+    }
+
+  /*  .activity-section {
+        display: block;
+        position: relative;
+        height: 600px;
+    }
+
+    .activity {
+        display: block;
+        height: 600px;
+        width: 100%;
+    }
+
+    .activity img {
+        display: block;
+        position: relative;
         width: 450px;
         height: 300px;
         max-width: 100%;
     }
 
-    .activity-section {
-        display: block;
-        position: relative;
-        min-height: 600px;
-        border-bottom: 2px solid #FE7F2D;
-        width: 80%;
-        margin: auto;
-        margin-top: 20px;
-    }
-
     .activity-content {
         display: block;
+        position: relative;
         width: 100%;
     }
+
+    .activity h3 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: bold;
+        color: #4F756B !important;
+        padding-top: 10px;
+    }
+
+    .activity p {
+        overflow: hidden;
+    } */
 }
 
 /*------------New activity section----------------*/
@@ -270,18 +317,17 @@ i {
     display: block;
     position: relative;
     min-height: 300px;
-    max-height: 300px;
     border-bottom: 2px solid #FE7F2D;
     width: 80%;
     margin: auto;
     margin-top: 20px;
+    padding-bottom: 10px;
 }
 
 .activity-content {
     display: inline-block;
     position: relative;
     float: left;
-    max-width: 60%;
 }
 
 .activity img {
@@ -294,16 +340,16 @@ i {
 .activity {
     display: inline-block;
     overflow: hidden;
-    height:280px;
 }
 
 .activity p {
     display: inline-block;
-    max-height: 180px;
     padding-top: 15px;
       background: -webkit-linear-gradient(top, black 70%, #eee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+    font-family: 'Nunito', sans-serif !important;
+
 }
 
 .activity h3 {
@@ -335,11 +381,6 @@ i {
     border-color: #EF6F6C;
     border-radius: 50%;
     padding: 4px 4px;
-}
-
-.activity p {
-    font-family: 'Nunito', sans-serif !important;
-    font-size: 18px;
 }
 
 .more-info {
