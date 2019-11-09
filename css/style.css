@@ -221,8 +221,12 @@ i {
         max-width: 100%;
     }
 
+    .activity-content {
+        height: 110px;
+    }
+
     .activity h3 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
 }
@@ -254,7 +258,7 @@ i {
     }
 
     .activity h3 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .activity p {
@@ -262,7 +266,7 @@ i {
         background: -webkit-linear-gradient(top, black 70%, #eee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        height: 120px;
+        height: 125px;
     }
 
   /*  .activity-section {
