@@ -348,6 +348,7 @@ i {
     }
 
     .activity h3 {
+        margin-top: 25px;
         display: inline-block;
         font-size: 32px;
     }
@@ -357,7 +358,7 @@ i {
     }
 
     .activity p {
-        display: inline;
+        display: inline-block;
         position: relative;
         float: left;
         height: 120px;
@@ -366,7 +367,6 @@ i {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
 }
 
 /*------------New activity section----------------*/
@@ -419,7 +419,6 @@ i {
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     color: #4F756B !important;
-    padding-top: 10px;
 }
 
 .activity-icons-container {
