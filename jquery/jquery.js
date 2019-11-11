@@ -71,14 +71,16 @@ $(document).ready(function() {
             console.log(this);
             let icons = Array.from($(".highlight").children("i")); // all buttons highlighted, get <i> class
             console.log(icons);
-            let classes = $(".highlight").children("i").attr("class");
+            let classes = $(".highlight").attr("id");
             console.log(classes);
             let classes_arr = classes.split(" ");
             console.log(classes_arr);
 
-            for (let i = 0; i < icons.length; i++) {
-                // If the key for this iteration's element is desired
-                console.log(Array.from(icons[i]));
+            var books = Array.from($(".highlight").attr('id').split(' '));
+            console.log(books);
+
+            for (var i = 0; i < books.length; i++) {
+                console.log(books);
             }
 
         });
