@@ -296,6 +296,7 @@ i {
 
     .activity h3 {
         font-size: 22px;
+        padding-top: 10px;
     }
 
     .activity p {
@@ -563,8 +564,8 @@ i {
     font-size: 24px;
 }
 
-.modal-body p {
-    margin-top: 10px;
+.modal-paragraphs {
+    padding: 20px 10px;
 }
 
 .modal-image {
