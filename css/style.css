@@ -209,8 +209,17 @@ i {
     .activity-section {
         display: block;
         position: relative;
+        width: 90%;
+        margin: auto;
         min-height: 300px;
-        max-height: 600px;
+        max-height: 320px;
+        overflow: hidden;
+    }
+
+    .activity-summary {
+        display: block;
+        position: relative;
+        float: left;
     }
 
     .activity img {
@@ -227,15 +236,17 @@ i {
 
     .activity h3 {
         font-size: 22px;
+        padding-top: 10px;
     }
 
 }
 
-@media only screen and (min-device-width: 401px) and (max-device-width: 600px) {
+@media only screen and (min-device-width: 401px) and (max-device-width: 767px) {
 
     .activity-section {
         display: block;
         position: relative;
+        width: 80%;
         min-height: 400px !important;
         max-height: 500px;
         overflow: hidden;
@@ -254,7 +265,10 @@ i {
         overflow: hidden;
     }
 
-    .activity-content {
+    .activity-summary {
+        display: block;
+        position: relative;
+        float: left;
     }
 
     .activity h3 {
@@ -267,44 +281,92 @@ i {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         height: 125px;
+        padding-bottom: 10px;
     }
+}
 
-  /*  .activity-section {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+
+    .activity-section {
         display: block;
         position: relative;
-        height: 600px;
-    }
-
-    .activity {
-        display: block;
-        height: 600px;
-        width: 100%;
+        width: 80%;
+        min-height: 400px !important;
+        max-height: 500px;
+        overflow: hidden;
     }
 
     .activity img {
-        display: block;
-        position: relative;
-        width: 450px;
-        height: 300px;
-        max-width: 100%;
+        margin-right: 15px;
     }
 
-    .activity-content {
-        display: block;
+    .activity-summary {
+        margin-top: 20px;
+        display: inline;
         position: relative;
-        width: 100%;
+        float: left;
     }
 
     .activity h3 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: bold;
-        color: #4F756B !important;
-        padding-top: 10px;
+        display: inline;
+        font-size: 20px;
+    }
+
+    .activity-icons-container {
+        margin: 10px 0px;
     }
 
     .activity p {
+        font-size: 12px;
+        background: -webkit-linear-gradient(top, black 70%, #eee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        height: 125px;
+    }
+
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1950px) {
+
+    .activity-section {
+        display: block;
+        position: relative;
+        width: 70%;
+        min-height: 400px !important;
+        max-height: 400px !important;
         overflow: hidden;
-    } */
+    }
+
+    .activity img {
+        margin-right: 25px;
+    }
+
+    .activity-summary {
+        display: inline-block;
+        position: relative;
+        float: left;
+    }
+
+    .activity h3 {
+        display: inline-block;
+        font-size: 32px;
+    }
+
+    .activity-icons-container {
+        margin: 10px 0px;
+    }
+
+    .activity p {
+        display: inline;
+        position: relative;
+        float: left;
+        height: 120px;
+        font-size: 18px;
+        background: -webkit-linear-gradient(top, black 70%, #eee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
 }
 
 /*------------New activity section----------------*/
@@ -322,10 +384,9 @@ i {
     position: relative;
     min-height: 300px;
     border-bottom: 2px solid #FE7F2D;
-    width: 80%;
     margin: auto;
     margin-top: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .activity-content {
@@ -337,7 +398,6 @@ i {
 .activity img {
     display: inline-block;
     position: relative;
-    margin-right: 25px;
     float: left;
 }
 
@@ -347,7 +407,6 @@ i {
 }
 
 .activity p {
-    display: inline-block;
     padding-top: 15px;
       background: -webkit-linear-gradient(top, black 70%, #eee);
   -webkit-background-clip: text;
