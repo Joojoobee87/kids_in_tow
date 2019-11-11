@@ -69,22 +69,26 @@ $(document).ready(function() {
         button.on('click', function() {
             $(this).toggleClass('highlight'); //switch highlight class on and off clicked button
             console.log(this);
-            let icons = Array.from($(".highlight").children("i")); // all buttons highlighted, get <i> class
-            console.log(icons);
-            let classes = $(".highlight").attr("id");
-            console.log(classes);
-            let classes_arr = classes.split(" ");
-            console.log(classes_arr);
+            let selected = $(".highlight") // all buttons highlighted, get <i> class
+            console.log(selected);
+            let buttonId = $(selected).attr("id");
+            console.log(buttonId);
+            let filters = []
 
-            var books = Array.from($(".highlight").attr('id').split(' '));
-            console.log(books);
+            $('.highlight').each(function() {
+                let highlightedIds = $(this).attr('id');
+                filters.push(highlightedIds);
+                console.log(filters);
 
-            for (var i = 0; i < books.length; i++) {
-                console.log(books);
-            }
-
+                for (var i = 0; i < filters.length; i++) {
+                    console.log(filters[i]);
+                    if ($(".activity-section").hasClass(filters[i])) {
+                        console.log(filters[i]);
+                        $(".activity-section").css("display", "none");
+                    }
+                }
+            });
         });
-
     }
     applyFilters();
 
