@@ -239,6 +239,29 @@ i {
         padding-top: 10px;
     }
 
+    .modal-body {
+        font-size: 10px !important;
+    }
+
+    .facilities {
+        font-size: 10px;
+        padding-top: 10px;
+        margin-left: 5px !important;
+    }
+
+    .modal-image {
+        max-width: 300px;
+        max-height: 200px;
+    }
+
+    .slide-image {
+        width: 300px;
+        height: 200px;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
 }
 
 @media only screen and (min-device-width: 401px) and (max-device-width: 767px) {
@@ -283,6 +306,11 @@ i {
         height: 125px;
         padding-bottom: 10px;
     }
+
+    .modal-content {
+        padding: 20px;
+        font-family: 'Nunito', sans-serif !important;
+    }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
@@ -322,6 +350,17 @@ i {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         height: 125px;
+    }
+    .modal-dialog {
+        max-width: 90% !important;
+    }
+
+    .modal-content {
+        padding: 50px;
+        font-family: 'Nunito', sans-serif !important;
+    }
+    .facilities {
+        font-size: 14px;
     }
 
 }
@@ -366,6 +405,14 @@ i {
         background: -webkit-linear-gradient(top, black 70%, #eee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .modal-dialog {
+        max-width: 60% !important;
+    }
+
+    .modal-content {
+        padding: 50px;
     }
 }
 
@@ -455,24 +502,28 @@ i {
   background-color: #EF6F6C !important;
   border-color: white !important;
   border-radius: 15px !important;
-  color: black;
   font-family: 'Nunito', sans-serif;
   font-size: 12px;
   padding: 5px;
   border-radius: 15px;
 }
 
+.modal-close {
+    font-family: 'Nunito', sans-serif;
+    background-color: #EF6F6C !important;
+    border-color: white !important;
+    border-radius: 15px !important;
+}
+
 
 /*----------------Modals-----------------*/
 
 .modal-content {
-    padding: 50px;
     font-family: 'Nunito', sans-serif !important;
 }
 
 .modal-dialog {
-    margin-top: 100px !important;
-    max-width: 60% !important;
+    margin-top: 50px !important;
 }
 
 .modal-header {
@@ -553,7 +604,6 @@ i {
     display: inline-block;
     position: relative;
     font-family: 'Nunito', sans-serif;
-    font-size: 14px;
     color: black;
     margin-left: 10px;
 }
