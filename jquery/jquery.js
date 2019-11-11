@@ -58,7 +58,8 @@ $(document).ready(function() {
     }
     modalSlideshow();
 
-    function filterSelected() {
+
+    function applyFilters() {
 
         let button = $(".activity-btn"); // filter buttons
         console.log(button);
@@ -66,18 +67,23 @@ $(document).ready(function() {
         console.log(applyButton);
 
         button.on('click', function() {
-            $(this).toggleClass('highlight');
+            $(this).toggleClass('highlight'); //switch highlight class on and off clicked button
             console.log(this);
-            let icon = $(this).children("i").attr("class"); // this button <i> class
-            console.log(icon);
-            let icons = $(".highlight").children("i"); // all buttons highlighted, get <i> class
+            let icons = Array.from($(".highlight").children("i")); // all buttons highlighted, get <i> class
             console.log(icons);
-            let selectedFilters = $(".highlight"); // shows all selected filters with a class of highlight
-            console.log(selectedFilters);
+            let classes = $(".highlight").children("i").attr("class");
+            console.log(classes);
+            let classes_arr = classes.split(" ");
+            console.log(classes_arr);
+
+            for (let i = 0; i < icons.length; i++) {
+                // If the key for this iteration's element is desired
+                console.log(Array.from(icons[i]));
+            }
 
         });
 
     }
-    filterSelected();
+    applyFilters();
 
 })
