@@ -182,8 +182,24 @@ i {
 
 /*-----------Contact Us----------*/
 
+.contact-form {
+    width: 80%;
+    margin: auto;
+}
+
 label {
-    color: white !important;
+    color: #ffffff;
+}
+
+.submit {
+    font-family: 'Nunito', sans-serif !important;
+    padding: 5px;
+    width: 100px;
+    border: solid;
+    border-color:#4F756B;
+    border-radius: 15px;
+    background-color: #4F756B;
+    margin: 3px;
 }
 
 /*-----------Google Map-----------*/
