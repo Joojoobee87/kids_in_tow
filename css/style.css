@@ -141,6 +141,17 @@ body {
     background-color: #90AFA2;
 }
 
+.activity-filter {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+.apply-filters-container {
+    width: 90%;
+    margin: auto;
+}
+
 .about-container {
     background-color: #FE7F2D;
     padding: 50px 100px;
