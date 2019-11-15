@@ -144,7 +144,6 @@ body {
 .activity-filter {
     width: 90%;
     margin: auto;
-    padding: 20px 0px;
 }
 
 .apply-filters-container {
@@ -154,7 +153,11 @@ body {
 
 .about-container {
     background-color: #FE7F2D;
-    padding: 50px 100px;
+}
+
+.about-content {
+    width: 80%;
+    margin: auto;
 }
 
 .about-container p {
@@ -202,7 +205,7 @@ i {
 .contact-form {
     width: 80%;
     margin: auto;
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 
 label {
