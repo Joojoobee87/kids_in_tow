@@ -150,6 +150,7 @@ body {
 
 .contact-container {
     background-color: #EF6F6C;
+    height: 600px;
 }
 
 .button {
@@ -200,6 +201,16 @@ label {
     border-radius: 15px;
     background-color: #4F756B;
     margin: 3px;
+}
+
+.submit:hover {
+    background-color: #4F756B;
+    border-color:#4F756B;
+    opacity: 0.8;
+}
+
+.contact-thanks {
+    display: none;
 }
 
 /*-----------Google Map-----------*/

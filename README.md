@@ -164,7 +164,7 @@ I used various sites to gain inspiration, information and content for the places
 <li>https://harewood.org/
 <li>
 <li>
-<li>
+<li>https://www.termsfeed.com/blog/sample-privacy-policy-template/ - Privacy Policy template wording
 </ul>
 <h3>Media</h3>
 
