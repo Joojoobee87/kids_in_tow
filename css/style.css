@@ -37,6 +37,12 @@
     font-size: 100px;
 }
 
+.kit-anchor:hover {
+    text-decoration: none;
+    color: #EF6F6C;
+
+}
+
 .kit-tagline span {
     display: inline-block;
     position: relative;
@@ -186,6 +192,7 @@ i {
 .contact-form {
     width: 80%;
     margin: auto;
+    padding: 50px 0px;
 }
 
 label {
@@ -200,7 +207,7 @@ label {
     border-color:#4F756B;
     border-radius: 15px;
     background-color: #4F756B;
-    margin: 3px;
+    margin: 10px 3px;
 }
 
 .submit:hover {
@@ -211,6 +218,12 @@ label {
 
 .contact-thanks {
     display: none;
+    width: 80%;
+    margin: 100px auto;
+    color: white;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 24px;
+    font-weight: normal;
 }
 
 /*-----------Google Map-----------*/
@@ -552,6 +565,7 @@ label {
 .more-info {
   position: absolute;
   z-index: 1;
+  width: 100px;
   bottom: 0%;
   right: 0%;
   margin-bottom: 10px;
