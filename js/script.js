@@ -114,3 +114,11 @@ function addMarkerToMap(map) {
         });
     }
 }
+
+function sendEmail() {
+    emailjs.send("gmail", "kids_in_tow_contact", {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.email.value,
+        "message": contactForm.message.value,
+    })
+}
