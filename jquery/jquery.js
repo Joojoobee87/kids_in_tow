@@ -1,19 +1,13 @@
 $(document).ready(function () {
 
     function dropdownContainers() {
-        $(".filters-tab").click(function () {
-            $(".tab-container").css("display", "none");
-            $(".filters-container").slideToggle();
-        })
-        $(".about-tab").click(function () {
-            $(".tab-container").css("display", "none");
-            $(".about-container").slideToggle();
-        })
-        $(".contact-tab").click(function () {
-            $(".tab-container").css("display", "none");
-            $(".contact-container").slideToggle();
-            $(".contact-form").show();
-            $(".contact").hide();
+        $(".tab").click(function () {
+            let currentTabId = $(this).attr("id");
+            let container = $(".tab-container");
+            console.log($(this).attr("id"));
+            $(container).not("." + currentTabId).hide();
+            $("." + currentTabId).toggle();
+            return false;
         })
     }
     dropdownContainers();
