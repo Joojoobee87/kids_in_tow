@@ -77,14 +77,18 @@ $(document).ready(function () {
             $(applyButton).on('click', function () { // on click of apply filters button
                 console.log(filters);
                 let activity = $(".activity-section")
-                $(activity).each(function (index, value) {
-                    console.log(index + $(this).attr("class"));
-                    let activeClass = $(this).attr("class").split(' ');
-                    console.log(activeClass);
-                }); // get classes of each activity
-            });
-        });
+                for (i = 0; i < filters.length; ++i) { // for each highlighted filter
+                    console.log(filters[i]);
+                    if ($(activity).hasClass(filters[i])) { // if activity section has a class of one of the highlighted filters
+                        console.log($(activity));
+                        $(activity).show(); // show activity
+                    } else {
+                        $(activity).hide(); // else hide activity
+                    }
+                }
+            })
+        })
     }
-    applyFilters();
+applyFilters();
 
 })
