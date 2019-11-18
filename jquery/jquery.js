@@ -4,25 +4,16 @@ $(document).ready(function () {
         $(".tab").click(function () {
             let currentTabId = $(this).attr("id");
             let container = $(".tab-container");
-            console.log($(this).attr("id"));
             $(container).not("." + currentTabId).hide();
             $("." + currentTabId).toggle();
-            return false;
+        })
+        $(".tab-container i").click(function () {
+            let currentContainer = $(this).parent().attr("class").split(' ')[0];
+            let container = $(".tab-container");
+            $("." + currentContainer).hide();
         })
     }
     dropdownContainers();
-
-    function closeButton() {
-        $(".tab-container i").click(function () {
-            let currentTab = $(this).parent().first().attr("class");
-            let container = $(".tab-container");
-            console.log(container);
-            console.log(currentTab);
-            $("." + currentTab).hide();
-            console.log($("." + currentTab));
-        })
-    }
-    closeButton();
 
     function modalSlideshow() {
         $('.modal').on('shown.bs.modal', function (event) {
