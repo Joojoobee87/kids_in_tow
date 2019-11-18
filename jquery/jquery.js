@@ -75,14 +75,11 @@ $(document).ready(function () {
                 $(applyButton).on('click', function () { // on click of apply filters button
                     let activity = $(".activity-section")
                     $(activity).hide();                     // hide all activity sections
-
-                    $.each(filters, function (index, value) { // for each of the filters selected
-                        if (activity.className == value) { // if the activity class is == value then show else hide
-                            $(activity).show();
-                        } else {
-                            $(activity).hide();
-                        }
-                    });
+                    console.log(filters);
+                    $(activity).each(function (index, value) {
+                        let activeClass = $(activity).attr("class").split(' ');
+                        console.log(activeClass);
+                    }); // get classes of each activity
 
                 });
 
