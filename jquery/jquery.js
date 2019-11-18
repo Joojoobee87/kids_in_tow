@@ -12,6 +12,18 @@ $(document).ready(function () {
     }
     dropdownContainers();
 
+    function closeButton() {
+        $(".tab-container i").click(function () {
+            let currentTab = $(this).parent().first().attr("class");
+            let container = $(".tab-container");
+            console.log(container);
+            console.log(currentTab);
+            $("." + currentTab).hide();
+            console.log($("." + currentTab));
+        })
+    }
+    closeButton();
+
     function modalSlideshow() {
         $('.modal').on('shown.bs.modal', function (event) {
             var modal = $(this)
