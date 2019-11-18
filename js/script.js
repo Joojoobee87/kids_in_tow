@@ -109,8 +109,32 @@ function addMarkerToMap(map) {
             content: place[4]
         });
 
-        marker.addListener('click', function() {
+        marker.addListener('click', function () {
             infoWindow.open(map, marker);
         });
     }
+}
+
+function sendEmail(contactForm) {
+    emailjs.send("gmail", "kids_in_tow_contact", {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.email.value,
+        "message": contactForm.message.value
+    })
+        .then(
+            function (response) {
+                console.log("SUCCESS", response);
+                $(".contact-container").css("display", "block");
+                $(".contact-form").hide();
+                $(".contact-thanks").show();
+
+            },
+            function (error) {
+                console.log("FAILED", error);
+                $(".contact-container").css("display", "block");
+                $(".contact-form").hide();
+                $(".contact-error").show();
+            }
+        );
+    return false;
 }

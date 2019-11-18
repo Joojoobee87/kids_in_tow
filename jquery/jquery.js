@@ -1,14 +1,5 @@
 $(document).ready(function () {
 
-    function submitThankyou() {
-        $(".submit").click(function () {
-            $(".contact-container").css("display", "block");
-            $(".contact-form").hide();
-            $(".contact-thanks").show();
-        })
-    }
-    submitThankyou();
-
     function dropdownContainers() {
         $(".filters-tab").click(function () {
             $(".tab-container").css("display", "none");
@@ -22,7 +13,7 @@ $(document).ready(function () {
             $(".tab-container").css("display", "none");
             $(".contact-container").slideToggle();
             $(".contact-form").show();
-            $(".contact-thanks").hide();
+            $(".contact").hide();
         })
     }
     dropdownContainers();
