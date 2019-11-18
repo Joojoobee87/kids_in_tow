@@ -116,7 +116,7 @@ function addMarkerToMap(map) {
 }
 
 function sendEmail(contactForm) {
-    emailjs.send("gmail", "kids_in_tow_contact", {
+    emailjs.send("default_service", "kids_in_tow_contact", {
         "from_name": contactForm.name.value,
         "from_email": contactForm.email.value,
         "message": contactForm.message.value
