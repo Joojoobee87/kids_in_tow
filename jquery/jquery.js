@@ -69,20 +69,19 @@ $(document).ready(function () {
             $(selected).each(function () {
                 let highlightedIds = $(this).attr('id'); //gets id of highlighted button
                 filters.push(highlightedIds);
+                console.log(highlightedIds);
+            });
 
-                let applyButton = $(".apply-filters"); // apply filters button
+            let applyButton = $(".apply-filters"); // apply filters button
 
-                $(applyButton).on('click', function () { // on click of apply filters button
-                    let activity = $(".activity-section")
-                    $(activity).hide();                     // hide all activity sections
-                    console.log(filters);
-                    $(activity).each(function (index, value) {
-                        let activeClass = $(activity).attr("class").split(' ');
-                        console.log(activeClass);
-                    }); // get classes of each activity
-
-                });
-
+            $(applyButton).on('click', function () { // on click of apply filters button
+                console.log(filters);
+                let activity = $(".activity-section")
+                $(activity).each(function (index, value) {
+                    console.log(index + $(this).attr("class"));
+                    let activeClass = $(this).attr("class").split(' ');
+                    console.log(activeClass);
+                }); // get classes of each activity
             });
         });
     }
