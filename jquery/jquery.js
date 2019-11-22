@@ -18,9 +18,7 @@ $(document).ready(function () {
     function modalSlideshow() {
         $('.modal').on('shown.bs.modal', function (event) {
             var modal = $(this)
-            console.log(modal);
             let images = Array.from(modal.find('.modal-image').children("img"));
-            console.log(images);
             $(images).css("display", "none");
             $(images[0]).css("display", "block");
 
@@ -33,7 +31,6 @@ $(document).ready(function () {
                     $(images[i]).css("display", "none");
                 }
                 index++;
-                console.log(index)
                 if (index > images.length - 1) {
                     $(images[images.length - 1]).css("display", "block");
                     index = 0;
