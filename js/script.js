@@ -116,10 +116,14 @@ function addMarkerToMap(map) {
 }
 
 function sendEmail(contactForm) {
+    var customer = $('#customer-type').find(":selected").text();
+    var subscribed = $('#subscribed').val();
     emailjs.send("default_service", "kids_in_tow_contact", {
         "from_name": contactForm.name.value,
         "from_email": contactForm.email.value,
-        "message": contactForm.message.value
+        "message": contactForm.message.value,
+        "customer_type": customer,
+        "subscribed": subscribed,
     })
         .then(
             function (response) {
