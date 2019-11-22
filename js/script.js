@@ -62,7 +62,7 @@ function initMap() {
 
 //define places of interest including name and coordinates
 
-let placesOfInterest = [
+let activities = [
     ["Harewood House", 53.8999, -1.5115, false, "This is the content of Harewood House"],
     ["Stockeld Park", 53.940942, -1.431498, false, "This is the content of Stockeld Park"],
     ["Valley Gardens", 53.9933, -1.5478, false, "This is the content of Valley Gardens"],
@@ -83,16 +83,16 @@ let placesOfInterest = [
 
 function addMarkerToMap(map) {
 
-    for (let i = 0; i < placesOfInterest.length; i++) {
+    for (let i = 0; i < activities.length; i++) {
 
-        let place = placesOfInterest[i];
+        let activity = activities[i];
         let marker = new google.maps.Marker({
             position: { lat: place[1], lng: place[2] },
             map: map,
         });
 
         let infoWindow = new google.maps.InfoWindow({
-            content: place[4]
+            content: activity[4]
         });
 
         marker.addListener('click', function () {
