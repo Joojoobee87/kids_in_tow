@@ -57,7 +57,6 @@ function initMap() {
         map: map,
     });
 
-    addMarkerToMap(map);
 }
 
 //define places of interest including name and coordinates
@@ -99,32 +98,6 @@ function addMarkerToMap(map) {
             infoWindow.open(map, marker);
         });
     }
+    addMarkerToMap(map);
 }
 
-function sendEmail(contactForm) {
-    var customer = $('#customer-type').find(":selected").text();
-    var subscribed = $('#subscribed').val();
-    emailjs.send("default_service", "kids_in_tow_contact", {
-        "from_name": contactForm.name.value,
-        "from_email": contactForm.email.value,
-        "message": contactForm.message.value,
-        "customer_type": customer,
-        "subscribed": subscribed,
-    })
-        .then(
-            function (response) {
-                console.log("SUCCESS", response);
-                $(".contact-container").css("display", "block");
-                $(".contact-form").hide();
-                $(".contact-thanks").show();
-
-            },
-            function (error) {
-                console.log("FAILED", error);
-                $(".contact-container").css("display", "block");
-                $(".contact-form").hide();
-                $(".contact-error").show();
-            }
-        );
-    return false;
-}
