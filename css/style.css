@@ -212,7 +212,8 @@ label {
     color: #ffffff;
 }
 
-.submit {
+.submit,
+.search {
     font-family: 'Nunito', sans-serif !important;
     padding: 5px;
     width: 100px;
@@ -223,7 +224,8 @@ label {
     margin: 10px 3px;
 }
 
-.submit:hover {
+.submit:hover,
+.search:hover {
     background-color: #4F756B;
     border-color:#4F756B;
     opacity: 0.8;
@@ -251,13 +253,30 @@ label {
 
 .map-container {
     display: inline-block;
+    background-color: #EF6F6C;
+    border-radius: 15px;
     width: 80%;
-    margin: auto;
+    margin: 40px auto;
+    overflow: hidden;
 }
 
 #map {
+    z-index: 1;
     height: 400px;
     width: 100%;
+    padding: 10px;
+}
+.explore {
+    margin-top: 20px;
+}
+
+#explore-options {
+    width: 60%;
+    margin: auto;
+}
+
+.explore-form {
+    padding: 10px 50px;
 }
 
 /*--------------Responsive Design-----------------*/
@@ -506,7 +525,6 @@ label {
     position: relative;
     float: left;
     max-width: 100%;
-    margin-top: 20px;
 }
 
 .activity-section {

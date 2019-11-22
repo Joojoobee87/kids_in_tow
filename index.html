@@ -171,7 +171,23 @@
 
 		<div class="map-section">
 			<div class="map-container">
-				<h1>My Google Map</h1>
+				<div class="explore">
+					<h1>Explore Leeds</h1>
+					<span>Looking for things to compliment your day out. Search our interactive map to find out more</span>
+				</div>
+				<form>
+					<div class="form-inline explore-form">
+						<label for="explore-label">I'm looking for...</label>
+						<select class="form-control" id="explore-options">
+                                <option value="food-drink">Food & Drink</option>
+                                <option value="transport">Transport</option>
+                                <option value="accommodation">Accommodation</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="entertainment">Entertainment</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary search">Search</button>
+					</div>
+				</form>
 				<div id="map"></div>
 			</div>
 		</div>
@@ -2082,7 +2098,8 @@
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwYTzj-ACDYiP5jf_YIMKSmE70X9nwOBk&callback=initMap"
 			async defer></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwYTzj-ACDYiP5jf_YIMKSmE70X9nwOBk&libraries=places">
+		<script type="text/javascript"
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwYTzj-ACDYiP5jf_YIMKSmE70X9nwOBk&libraries=places">
 		</script>
 		<script src="https://kit.fontawesome.com/cee3059d8e.js" crossorigin="anonymous"></script>
 		<script src="js/script.js"></script>
