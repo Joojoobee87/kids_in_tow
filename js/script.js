@@ -72,7 +72,7 @@ let activities = [
     ["Royal Armouries", 53.7919, -1.5324, false, "This is the content of the Royal Armouries"],
     ["Go Ape Leeds", 53.786964, -1.453748, false, "This is the content of Go Ape Leeds"],
     ["Clip and Climb", 53.784064, -1.573365, false, "This is the content of Clip and Climb"],
-    ["Temple Newsam", 53.7844, 1.4597, false, "This is the content of Temple Newsam"],
+    ["Temple Newsam", 53.7844, -1.4597, false, "This is the content of Temple Newsam"],
     ["Yorkshire Wildlife Park", 53.505003, -1.041154, false, "This is the content of Yorkshire Wildlife Park"],
     ["Meanwood Valley Trail", 53.831898, -1.575373, false, "This is the content of Meanwood Valley Trail"],
     ["Brimham Rocks", 54.0803, -1.6850, false, "This is the content of Brimham Rocks"],
@@ -87,7 +87,7 @@ function addMarkerToMap(map) {
 
         let activity = activities[i];
         let marker = new google.maps.Marker({
-            position: { lat: place[1], lng: place[2] },
+            position: { lat: activity[1], lng: activity[2] },
             map: map,
         });
 
