@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     function dropdownContainers() {
         $(".tab").click(function () {
             let currentTabId = $(this).attr("id");
@@ -57,4 +57,39 @@ $(document).ready(function () {
         })
     }
     modalSlideshow();
+
+    function applyFilters() {
+
+        let button = $(".activity-btn"); // filter buttons
+
+        button.on('click', function () {
+            $(this).toggleClass('highlight') //switch highlight class on and off clicked button
+            let selected = $(".highlight") // all buttons highlighted
+            let filters = [] //initialise filters variable
+
+            $(selected).each(function () {
+                let highlightedIds = $(this).attr('id'); //gets id of highlighted button
+                filters.push(highlightedIds);
+                console.log(highlightedIds);
+            });
+
+            let applyButton = $(".apply-filters"); // apply filters button
+
+            $(applyButton).on('click', function () { // on click of apply filters button
+                console.log(filters);
+                let activity = $(".activity-section")
+                for (i = 0; i < filters.length; ++i) { // for each highlighted filter
+                    console.log(filters[i]);
+                    if ($(activity).hasClass(filters[i])) { // if activity section has a class of one of the highlighted filters
+                        console.log($(activity));
+                        $(activity).show(); // show activity
+                    } else {
+                        $(activity).hide(); // else hide activity
+                    }
+                }
+            })
+        })
+    }
+    applyFilters();
+
 });
