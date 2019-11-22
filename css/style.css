@@ -769,12 +769,12 @@ td {
     padding: 10px 0px;
 }
 
-.footer-links a:hover {
+.footer-container a:hover {
     color: #4F756B;
     text-decoration: none;
 }
 
-.footer-links a {
+.footer-container a {
     padding: 0 20px;
     color: #ffffff;
 }
@@ -799,12 +799,12 @@ td {
     padding: 10px 0px;
 
 }
-.social-media i {
+.social-media a {
     font-size: 36px;
     padding: 0px 20px;
 }
 
-.social-media i:hover {
+.social-media a:hover {
     color: #4F756B;
     text-decoration: none;
 }
