@@ -84,9 +84,9 @@ function initMap() {
             radius: 30000,
             types: ['tourist_attraction']
         };
-        
+
         var other = ['aquarium', 'art_gallery', 'bowling_alley', , 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo'];
-        
+
         var requestAccommodation = {
             location: leeds,
             radius: 30000,
@@ -119,38 +119,39 @@ function initMap() {
             service.nearbySearch(requestTourist, callback);
         }
 
+        var markers;
+
         function callback(results, status) {
+            var markers = [];
+
             if (status = google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < results.length; i++) {
+                    markers.push(results[i]);
                     createMarker(results[i]);
-                    console.log(results[i].name, results[i].types);
+                    console.log(markers);
                 }
             }
         }
+        console.log(markers);
 
         function createMarker(place) {
+
             var placeLocation = place.geometry.location;
-            var markerCafe = new google.maps.Marker({
+            var marker = new google.maps.Marker({
                 map: map,
                 position: place.geometry.location
             });
-            google.maps.event.addListener(markerCafe, 'click', function () {
-                infowindow.setContent(place.name, place.type);
+            console.log(place);
+            var infowindow = new google.maps.InfoWindow({
+                content: 'contentString'
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.setContent(place.name, place.vicinity, place.icon);
                 infowindow.open(map, this);
-
             });
         }
         return false;
     });
-
-    // selected places of interest category
-
-    var request = {
-        location: { lat: 53.802156, lng: -1.548946 },
-        radius: 5000,
-        type: ['restaurant']
-    };
-
 
     var placeFoodAndDrink = []
     var placeEntertainment = []
@@ -189,13 +190,12 @@ function initMap() {
                 position: { lat: activity[1], lng: activity[2] },
                 map: map,
             });
-
-            let infoWindow = new google.maps.InfoWindow({
-                content: activity[4]
+            var infowindow = new google.maps.InfoWindow({
+                content: 'contentString'
             });
-
-            marker.addListener('click', function () {
-                infoWindow.open(map, marker);
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.setContent(activity[4]);
+                infowindow.open(map, this);
             });
         }
     }
