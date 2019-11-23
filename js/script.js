@@ -71,27 +71,35 @@ function initMap() {
         // define place type requests 
         var requestFoodAndDrink = {
             location: leeds,
-            radius: 5000,
+            radius: 30000,
             types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
         };
         var requestEntertainment = {
             location: leeds,
-            radius: 500,
-            types: ['amusement_park', 'aquarium', 'art_gallery', 'bowling_alley', 'movie_theater', 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo']
+            radius: 30000,
+            types: ['bowling_alley', 'movie_theater', 'stadium', 'amusement_park'],
         };
+        var requestTourist = {
+            location: leeds,
+            radius: 30000,
+            types: ['tourist_attraction']
+        };
+        
+        var other = ['aquarium', 'art_gallery', 'bowling_alley', , 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo'];
+        
         var requestAccommodation = {
             location: leeds,
-            radius: 5000,
+            radius: 30000,
             types: ['lodging', 'rv_park']
         };
         var requestTransport = {
             location: leeds,
-            radius: 5000,
+            radius: 30000,
             types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
         };
         var requestShopping = {
             location: leeds,
-            radius: 5000,
+            radius: 30000,
             types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
         };
 
@@ -107,6 +115,8 @@ function initMap() {
             service.nearbySearch(requestShopping, callback);
         } else if (selected == 'entertainment') {
             service.nearbySearch(requestEntertainment, callback);
+        } else if (selected == 'tourist') {
+            service.nearbySearch(requestTourist, callback);
         }
 
         function callback(results, status) {
