@@ -58,8 +58,14 @@ function initMap() {
         map: map,
     });
 
-    var infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
+    // when search button is clicked get selected value of explore options and show related markers
+
+    console.log($("#explore-options").val());
+    $('.search').on('click', function () {
+        var selected = $('#explore-options').find(":selected").val();
+        console.log(selected);
+        return false;
+    });
 
     // selected places of interest category
 
@@ -93,105 +99,39 @@ function initMap() {
         types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
     };
 
-    // initiates service variable and retrieves a list of places within 5000 of leeds based on types 
+    var request = {
+        location: { lat: 53.802156, lng: -1.548946 },
+        radius: 5000,
+        type: ['restaurant']
+    };
 
-    // results for accommodation
-    service.nearbySearch(requestAccommodation, function (searchResults, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i; i < searchResults.length; i++) {
-                createMarker(searchResults[i]);
-            }
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+    console.log(google.maps.places.PlacesServiceStatus);
+
+    function callback(results, status) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+            console.log(results[i].name, results[i].types);
         }
-    });
+    }
 
-    // results for entertainment
-    service.nearbySearch(requestEntertainment, function (searchResults, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i; i < searchResults.length; i++) {
-                createMarker(searchResults[i]);
-            }
-        }
-    });
-
-    // results for transport
-    service.nearbySearch(requestTransport, function (searchResults, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i; i < searchResults.length; i++) {
-                createMarker(searchResults[i]);
-            }
-        }
-    });
-
-    // results for shopping
-    service.nearbySearch(requestShopping, function (searchResults, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i; i < searchResults.length; i++) {
-                createMarker(searchResults[i]);
-            }
-        }
-    });
-
-    // results for entertainment
-    service.nearbySearch(requestFoodAndDrink, function (searchResults, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i; i < searchResults.length; i++) {
-                createMarker(searchResults[i]);
-            }
-        }
-    });
-    console.log(searchResults);
-
-    // get selected place type from explore-options box
-
-    var selectedType = document.getElementById('#explore-options');
-    console.log(selectedType);
-
-    // when search button is clicked get selected value of explore options and show related markers
-
-    console.log($("#explore-options").val());
-    google.maps.event.addDomListener(document.getElementById('.search'), 'click', function () {
-        if ($("#explore-options option:selected").val() == 'food-drink') {
-            changeMarkers(foodDrinkMarkers);
-        }
-        if ($("#explore-options option:selected").val() == 'transport') {
-            changeMarkers(transportMarkers);
-        }
-        if ($("#explore-options option:selected").val() == 'accommodation') {
-            changeMarkers(accommodationMarkers);
-        }
-        if ($("#explore-options option:selected").val() == 'shopping') {
-            changeMarkers(shoppingMarkers);
-        }
-        if ($("#explore-options option:selected").val() == 'entertainment') {
-            changeMarkers(entertainmentMarkers);
-        }
-    });
-
-    // create markers for search results
-
-    function createMarker(searchResults) {
-
-        var marker = new google.maps.Marker({
+    function createMarker(place) {
+        var placeLocation = place.geometry.location;
+        var markerCafe = new google.maps.Marker({
             map: map,
-            position: searchResults.geometry.location,
-            title: searchResults.name
+            position: place.geometry.location
+        });
+        google.maps.event.addListener(markerCafe, 'click', function () {
+            infowindow.setContent(place.name, place.type);
+            infowindow.open(map, this);
+
         });
     }
 
-    // when map becomes idle after zooming or panning do this...
-
-    google.maps.event.addListener(map, "idle", function () {
-
-    });
-
-    // when marker is clicked display info window and set content of search results
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(searchResults.name, searchResults.rating);
-    });
-
     //define places of interest including name and coordinates
 
-    let activities = [
+    var activities = [
         ["Harewood House", 53.8999, -1.5115, false, "This is the content of Harewood House"],
         ["Stockeld Park", 53.940942, -1.431498, false, "This is the content of Stockeld Park"],
         ["Valley Gardens", 53.9933, -1.5478, false, "This is the content of Valley Gardens"],
@@ -228,7 +168,6 @@ function initMap() {
                 infoWindow.open(map, marker);
             });
         }
-        addActivityMarkerToMap(map);
     }
-
+    addActivityMarkerToMap(map);
 }
