@@ -86,3 +86,135 @@ $(document).ready(function() {
     }
     slideshow();
 });
+
+
+
+/// maps
+
+    // selected places of interest category
+
+    var requestEntertainment = {
+        location: leeds,
+        radius: 500,
+        types: ['amusement_park', 'aquarium', 'art_gallery', 'bowling_alley', 'movie_theater', 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo']
+    };
+
+    var requestFoodAndDrink = {
+        location: leeds,
+        radius: 5000,
+        types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
+    };
+
+    var requestAccommodation = {
+        location: leeds,
+        radius: 5000,
+        types: ['lodging', 'rv_park']
+    };
+
+    var requestTransport = {
+        location: leeds,
+        radius: 5000,
+        types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
+    };
+
+    var requestShopping = {
+        location: leeds,
+        radius: 5000,
+        types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
+    };
+
+    // initiates service variable and retrieves a list of places within 5000 of leeds based on types 
+
+    // results for accommodation
+    service.nearbySearch(requestAccommodation, function (searchResults, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i; i < searchResults.length; i++) {
+                createMarker(searchResults[i]);
+            }
+        }
+    });
+
+    // results for entertainment
+    service.nearbySearch(requestEntertainment, function (searchResults, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i; i < searchResults.length; i++) {
+                createMarker(searchResults[i]);
+            }
+        }
+    });
+
+    // results for transport
+    service.nearbySearch(requestTransport, function (searchResults, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i; i < searchResults.length; i++) {
+                createMarker(searchResults[i]);
+            }
+        }
+    });
+
+    // results for shopping
+    service.nearbySearch(requestShopping, function (searchResults, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i; i < searchResults.length; i++) {
+                createMarker(searchResults[i]);
+            }
+        }
+    });
+
+    // results for entertainment
+    service.nearbySearch(requestFoodAndDrink, function (searchResults, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i; i < searchResults.length; i++) {
+                createMarker(searchResults[i]);
+            }
+        }
+    });
+    console.log(searchResults);
+
+    // get selected place type from explore-options box
+
+    var selectedType = document.getElementById('#explore-options');
+    console.log(selectedType);
+
+    // when search button is clicked get selected value of explore options and show related markers
+
+    console.log($("#explore-options").val());
+    google.maps.event.addDomListener(document.getElementById('.search'), 'click', function () {
+        if ($("#explore-options option:selected").val() == 'food-drink') {
+            changeMarkers(foodDrinkMarkers);
+        }
+        if ($("#explore-options option:selected").val() == 'transport') {
+            changeMarkers(transportMarkers);
+        }
+        if ($("#explore-options option:selected").val() == 'accommodation') {
+            changeMarkers(accommodationMarkers);
+        }
+        if ($("#explore-options option:selected").val() == 'shopping') {
+            changeMarkers(shoppingMarkers);
+        }
+        if ($("#explore-options option:selected").val() == 'entertainment') {
+            changeMarkers(entertainmentMarkers);
+        }
+    });
+
+    // create markers for search results
+
+    function createMarker(searchResults) {
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: searchResults.geometry.location,
+            title: searchResults.name
+        });
+    }
+
+    // when map becomes idle after zooming or panning do this...
+
+    google.maps.event.addListener(map, "idle", function () {
+
+    });
+
+    // when marker is clicked display info window and set content of search results
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(searchResults.name, searchResults.rating);
+    });

@@ -59,45 +59,81 @@ function initMap() {
     });
 
     // when search button is clicked get selected value of explore options and show related markers
-
     console.log($("#explore-options").val());
     $('.search').on('click', function () {
         var selected = $('#explore-options').find(":selected").val();
         console.log(selected);
+
+        // initiate service variable
+
+        var service = new google.maps.places.PlacesService(map);
+
+        // define place type requests 
+        var requestFoodAndDrink = {
+            location: leeds,
+            radius: 5000,
+            types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
+        };
+        var requestEntertainment = {
+            location: leeds,
+            radius: 500,
+            types: ['amusement_park', 'aquarium', 'art_gallery', 'bowling_alley', 'movie_theater', 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo']
+        };
+        var requestAccommodation = {
+            location: leeds,
+            radius: 5000,
+            types: ['lodging', 'rv_park']
+        };
+        var requestTransport = {
+            location: leeds,
+            radius: 5000,
+            types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
+        };
+        var requestShopping = {
+            location: leeds,
+            radius: 5000,
+            types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
+        };
+
+        if (selected == 'food-drink') {
+            service.nearbySearch(requestFoodAndDrink, callback);
+            return false;
+        } else if (selected == 'transport') {
+            service.nearbySearch(requestTransport, callback);
+            return false;
+        } else if (selected == 'accommodation') {
+            service.nearbySearch(requestAccommodation, callback);
+        } else if (selected == 'shopping') {
+            service.nearbySearch(requestShopping, callback);
+        } else if (selected == 'entertainment') {
+            service.nearbySearch(requestEntertainment, callback);
+        }
+
+        function callback(results, status) {
+            if (status = google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                    console.log(results[i].name, results[i].types);
+                }
+            }
+        }
+
+        function createMarker(place) {
+            var placeLocation = place.geometry.location;
+            var markerCafe = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+            google.maps.event.addListener(markerCafe, 'click', function () {
+                infowindow.setContent(place.name, place.type);
+                infowindow.open(map, this);
+
+            });
+        }
         return false;
     });
 
     // selected places of interest category
-
-    var requestEntertainment = {
-        location: leeds,
-        radius: 500,
-        types: ['amusement_park', 'aquarium', 'art_gallery', 'bowling_alley', 'movie_theater', 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo']
-    };
-
-    var requestFoodAndDrink = {
-        location: leeds,
-        radius: 5000,
-        types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
-    };
-
-    var requestAccommodation = {
-        location: leeds,
-        radius: 5000,
-        types: ['lodging', 'rv_park']
-    };
-
-    var requestTransport = {
-        location: leeds,
-        radius: 5000,
-        types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
-    };
-
-    var requestShopping = {
-        location: leeds,
-        radius: 5000,
-        types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
-    };
 
     var request = {
         location: { lat: 53.802156, lng: -1.548946 },
@@ -105,29 +141,13 @@ function initMap() {
         type: ['restaurant']
     };
 
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-    console.log(google.maps.places.PlacesServiceStatus);
 
-    function callback(results, status) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-            console.log(results[i].name, results[i].types);
-        }
-    }
+    var placeFoodAndDrink = []
+    var placeEntertainment = []
+    var placeTransport = []
+    var placeShopping = []
+    var placeAccommodation = []
 
-    function createMarker(place) {
-        var placeLocation = place.geometry.location;
-        var markerCafe = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location
-        });
-        google.maps.event.addListener(markerCafe, 'click', function () {
-            infowindow.setContent(place.name, place.type);
-            infowindow.open(map, this);
-
-        });
-    }
 
     //define places of interest including name and coordinates
 
