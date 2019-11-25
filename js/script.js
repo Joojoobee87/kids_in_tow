@@ -218,13 +218,10 @@ function performSearch() {
 }
 
 function handleResults(results, status) {
-    console.log(results);
     if (status = google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             markers.push(results[i]);
-            console.log(markers);
-            console.log(place);
             createMarker(place);
         }
     }
@@ -235,7 +232,8 @@ function createMarker(place) {
     var placeLocation = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: place.geometry.location,
+        icon: 'icons/park.png'
     });
     console.log(place);
     infowindow = new google.maps.InfoWindow();
