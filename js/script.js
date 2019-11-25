@@ -3,8 +3,9 @@ var map;
 var service;
 var infoWindow;
 var leeds;
-
+var bounds;
 var marker;
+var markers = [];
 
 // initialise map
 function initMap() {
@@ -72,7 +73,16 @@ function initMap() {
     // call function to add activity markers to map
     addActivityMarkerToMap(map);
     // call perform search function once map is idle
-    google.maps.event.addListener(map, 'bounds_changed', performSearch);
+    google.maps.event.addListener(map, 'bounds_changed', function () {
+        bounds = map.getBounds();
+        place = [];
+        performSearch();
+    })
+
+    // Deletes all markers in the array by removing references to them.
+    $('.reset').on('click', function () {
+        markers = [];
+    })
 }
 
 //function to add markers to map, iterating through the activities variable
@@ -117,35 +127,49 @@ function addActivityMarkerToMap(map) {
 function performSearch() {
 
     // define place type requests 
-    var requestFoodAndDrink = {
+    var requestRestaurant = {
         bounds: map.getBounds(),
-        radius: 30000,
-        types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
+        types: ['restaurant']
     };
-    var requestEntertainment = {
+    var requestCafe = {
         bounds: map.getBounds(),
-        radius: 30000,
-        types: ['bowling_alley', 'movie_theater', 'stadium', 'amusement_park'],
+        types: ['cafe']
+    };
+    var requestMovie = {
+        bounds: map.getBounds(),
+        types: ['movie_theater']
+    };
+    var requestBowling = {
+        bounds: map.getBounds(),
+        types: ['bowling_alley']
     };
     var requestTourist = {
         bounds: map.getBounds(),
-        radius: 30000,
         types: ['tourist_attraction']
+    };
+    var requestAmusement = {
+        bounds: map.getBounds(),
+        types: ['amusement_park']
+    };
+    var requestPark = {
+        bounds: map.getBounds(),
+        types: ['park']
     };
     var requestAccommodation = {
         bounds: map.getBounds(),
-        radius: 30000,
-        types: ['lodging', 'rv_park']
-    };
-    var requestTransport = {
-        bounds: map.getBounds(),
-        radius: 30000,
-        types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
+        types: ['lodging']
     };
     var requestShopping = {
         bounds: map.getBounds(),
-        radius: 30000,
-        types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
+        types: ['shopping_mall']
+    };
+    var requestTrain = {
+        bounds: map.getBounds(),
+        types: ['train_station']
+    };
+    var requestBus = {
+        bounds: map.getBounds(),
+        types: ['bus_station']
     };
 
     // when search button is clicked get selected value of explore options and show related markers
@@ -153,13 +177,28 @@ function performSearch() {
 
         // get value of selected type
         var selected = $('#explore-options').find(":selected").val();
-
+        var place = [];
         console.log(selected);
-        if (selected == 'food-drink') {
-            service.nearbySearch(requestFoodAndDrink, handleResults);
+        if (selected == 'restaurant') {
+            service.nearbySearch(requestRestaurant, handleResults);
             return false;
-        } else if (selected == 'transport') {
-            service.nearbySearch(requestTransport, handleResults);
+        } else if (selected == 'cafe') {
+            service.nearbySearch(requestCafe, handleResults);
+            return false;
+        } else if (selected == 'movie-theater') {
+            service.nearbySearch(requestMovie, handleResults);
+            return false;
+        } else if (selected == 'bowling-alley') {
+            service.nearbySearch(requestBowling, handleResults);
+            return false;
+        } else if (selected == 'tourist') {
+            service.nearbySearch(requestTourist, handleResults);
+            return false;
+        } else if (selected == 'amusement') {
+            service.nearbySearch(requestAmusement, handleResults);
+            return false;
+        } else if (selected == 'park') {
+            service.nearbySearch(requestPark, handleResults);
             return false;
         } else if (selected == 'accommodation') {
             service.nearbySearch(requestAccommodation, handleResults);
@@ -167,24 +206,24 @@ function performSearch() {
         } else if (selected == 'shopping') {
             service.nearbySearch(requestShopping, handleResults);
             return false;
-        } else if (selected == 'entertainment') {
-            service.nearbySearch(requestEntertainment, handleResults);
+        } else if (selected == 'train') {
+            service.nearbySearch(requestTrain, handleResults);
             return false;
-        } else if (selected == 'tourist') {
-            service.nearbySearch(requestTourist, handleResults);
+        } else if (selected == 'bus') {
+            service.nearbySearch(requestBus, handleResults);
             return false;
         }
         console.log(selected);
-        return false;
-    });
+    })
 }
 
 function handleResults(results, status) {
     console.log(results);
-    marker = [];
     if (status = google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
+            markers.push(results[i]);
+            console.log(markers);
             console.log(place);
             createMarker(place);
         }
@@ -192,7 +231,7 @@ function handleResults(results, status) {
 }
 
 function createMarker(place) {
-
+    marker = [];
     var placeLocation = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
@@ -202,11 +241,16 @@ function createMarker(place) {
     infowindow = new google.maps.InfoWindow();
     var name = place.name;
     var address = place.vicinity;
+    var rating;
+    if (place.rating == undefined) {
+        rating = 'Not available'
+    } else {
+        rating = place.rating
+    }
     google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(name + '<br>' + address);
+        infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating);
         infowindow.open(map, this);
     });
-    return false;
 }
 
 var placeFoodAndDrink = []
