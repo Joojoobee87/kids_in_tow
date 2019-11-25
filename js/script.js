@@ -1,9 +1,17 @@
 // Initialise Google Map with marker at Leeds City Centre
+var map;
+var service;
+var infoWindow;
+var leeds;
 
+var marker;
+
+// initialise map
 function initMap() {
 
-    let leeds = { lat: 53.802156, lng: -1.548946 }
-    let map = new google.maps.Map(document.getElementById('map'), {
+    leeds = { lat: 53.802156, lng: -1.548946 }
+
+    map = new google.maps.Map(document.getElementById('map'), {
         center: leeds,
         zoom: 9,
         styles: [
@@ -53,112 +61,122 @@ function initMap() {
         ]
     });
 
-    let markerLeedsCentre = new google.maps.Marker({
+    var markerLeedsCentre = new google.maps.Marker({
         position: { lat: 53.802156, lng: -1.548946 },
         map: map,
     });
 
+    // initiate service variable
+    service = new google.maps.places.PlacesService(map);
+
+    // call function to add activity markers to map
+    addActivityMarkerToMap(map);
+    // call perform search function once map is idle
+    google.maps.event.addListener(map, 'bounds_changed', performSearch);
+}
+
+function performSearch() {
+
+    // define place type requests 
+    var requestFoodAndDrink = {
+        bounds: map.getBounds(),
+        radius: 30000,
+        types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
+    };
+    var requestEntertainment = {
+        bounds: map.getBounds(),
+        radius: 30000,
+        types: ['bowling_alley', 'movie_theater', 'stadium', 'amusement_park'],
+    };
+    var requestTourist = {
+        bounds: map.getBounds(),
+        radius: 30000,
+        types: ['tourist_attraction']
+    };
+    var requestAccommodation = {
+        bounds: map.getBounds(),
+        radius: 30000,
+        types: ['lodging', 'rv_park']
+    };
+    var requestTransport = {
+        bounds: map.getBounds(),
+        radius: 30000,
+        types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
+    };
+    var requestShopping = {
+        bounds: map.getBounds(),
+        radius: 30000,
+        types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
+    };
+
     // when search button is clicked get selected value of explore options and show related markers
-    console.log($("#explore-options").val());
     $('.search').on('click', function () {
+
+        // get value of selected type
         var selected = $('#explore-options').find(":selected").val();
+
         console.log(selected);
-
-        // initiate service variable
-
-        var service = new google.maps.places.PlacesService(map);
-
-        // define place type requests 
-        var requestFoodAndDrink = {
-            location: leeds,
-            radius: 30000,
-            types: ['bakery', 'bar', 'cafe', 'meal_takeaway', 'meal_delivery', 'restaurant']
-        };
-        var requestEntertainment = {
-            location: leeds,
-            radius: 30000,
-            types: ['bowling_alley', 'movie_theater', 'stadium', 'amusement_park'],
-        };
-        var requestTourist = {
-            location: leeds,
-            radius: 30000,
-            types: ['tourist_attraction']
-        };
-
-        var other = ['aquarium', 'art_gallery', 'bowling_alley', , 'museum', 'park', 'spa', 'stadium', 'tourist_attraction', 'zoo'];
-
-        var requestAccommodation = {
-            location: leeds,
-            radius: 30000,
-            types: ['lodging', 'rv_park']
-        };
-        var requestTransport = {
-            location: leeds,
-            radius: 30000,
-            types: ['airport', 'bus_station', 'car_rental', 'gas_station', 'light_rail_station', 'parking', 'subway_station', 'taxi_stand', 'train_station']
-        };
-        var requestShopping = {
-            location: leeds,
-            radius: 30000,
-            types: ['convenience_store', 'department_store', 'electronics_store', 'grocery_or_supermarket', 'home_goods_store', 'shopping_mall', 'store', 'supermarket']
-        };
-
         if (selected == 'food-drink') {
-            service.nearbySearch(requestFoodAndDrink, callback);
+            service.nearbySearch(requestFoodAndDrink, handleResults);
             return false;
         } else if (selected == 'transport') {
-            service.nearbySearch(requestTransport, callback);
+            service.nearbySearch(requestTransport, handleResults);
             return false;
         } else if (selected == 'accommodation') {
-            service.nearbySearch(requestAccommodation, callback);
+            service.nearbySearch(requestAccommodation, handleResults);
+            return false;
         } else if (selected == 'shopping') {
-            service.nearbySearch(requestShopping, callback);
+            service.nearbySearch(requestShopping, handleResults);
+            return false;
         } else if (selected == 'entertainment') {
-            service.nearbySearch(requestEntertainment, callback);
+            service.nearbySearch(requestEntertainment, handleResults);
+            return false;
         } else if (selected == 'tourist') {
-            service.nearbySearch(requestTourist, callback);
+            service.nearbySearch(requestTourist, handleResults);
+            return false;
         }
-
-        var markers;
-
-        function callback(results, status) {
-            var markers = [];
-
-            if (status = google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    markers.push(results[i]);
-                    createMarker(results[i]);
-                    console.log(markers);
-                }
-            }
-        }
-        console.log(markers);
-
-        function createMarker(place) {
-
-            var placeLocation = place.geometry.location;
-            var marker = new google.maps.Marker({
-                map: map,
-                position: place.geometry.location
-            });
-            console.log(place);
-            var infowindow = new google.maps.InfoWindow({
-                content: 'contentString'
-            });
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(place.name, place.vicinity, place.icon);
-                infowindow.open(map, this);
-            });
-        }
+        console.log(selected);
         return false;
     });
+}
 
-    var placeFoodAndDrink = []
-    var placeEntertainment = []
-    var placeTransport = []
-    var placeShopping = []
-    var placeAccommodation = []
+function handleResults(results, status) {
+    console.log(results);
+    marker = [];
+    if (status = google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+        }
+    }
+}
 
+function createMarker(place) {
+
+    var placeLocation = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+    console.log(place);
+    var infowindow = new google.maps.InfoWindow({
+        content: 'contentString'
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(place.name, place.vicinity, place.icon);
+        infowindow.open(map, this);
+    });
+    return false;
+}
+
+var placeFoodAndDrink = []
+var placeEntertainment = []
+var placeTransport = []
+var placeShopping = []
+var placeAccommodation = []
+
+//function to add markers to map, iterating through the activities variable
+
+function addActivityMarkerToMap(map) {
 
     //define places of interest including name and coordinates
 
@@ -179,25 +197,18 @@ function initMap() {
         ["The Arium", 53.840199, -1.432723, false, "This is the content of The Arium"],
     ]
 
-    //function to add markers to map, iterating through the placesOfInterest variable
+    for (var i = 0; i < activities.length; i++) {
 
-    function addActivityMarkerToMap(map) {
+        var activity = activities[i];
+        marker = new google.maps.Marker({
+            position: { lat: activity[1], lng: activity[2] },
+            map: map,
+        });
+        infowindow = new google.maps.InfoWindow();
 
-        for (let i = 0; i < activities.length; i++) {
-
-            let activity = activities[i];
-            let marker = new google.maps.Marker({
-                position: { lat: activity[1], lng: activity[2] },
-                map: map,
-            });
-            var infowindow = new google.maps.InfoWindow({
-                content: 'contentString'
-            });
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(activity[4]);
-                infowindow.open(map, this);
-            });
-        }
+        google.maps.event.addListener(marker, 'click', function () {
+            infowindow.setContent(activity[4]);
+            infowindow.open(map, this);
+        });
     }
-    addActivityMarkerToMap(map);
 }
