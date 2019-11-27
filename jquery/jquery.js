@@ -77,14 +77,23 @@ $(document).ready(function () {
                 let activity = $(".activity-section")
                 for (i = 0; i < filters.length; ++i) { // for each highlighted filter
                     console.log(filters[i]);
-                    if ($(activity).hasClass(filters[i])) { // if activity section has a class of one of the highlighted filters
-                        console.log($(activity));
-                        $(activity).show(); // show activity
-                    } else {
-                        $(activity).hide(); // else hide activity
+                    for (j = 0; j < activity.length; j++) {
+                        console.log(filters[i]);
+                        if ($(activity[j]).filter('filters[i]')) {
+                            // if activity section has a class of one of the highlighted filters
+                            console.log(true);
+                            console.log(activity[j]);
+                            $(activity[j]).show(); // show activity
+                        } else {
+                            console.log(false);
+                            $(activity[j]).hide(); // else hide activity
+                        }
                     }
                 }
+
             })
+            return false;
+            applyFilters();
         })
     }
     applyFilters();
@@ -117,3 +126,9 @@ $(document).ready(function () {
         return false;
     }
 })
+
+var x = $(".activity-section");
+console.log(x);
+
+console.log(x[0]);
+console.log($(x[0]).hasClass('star'));
