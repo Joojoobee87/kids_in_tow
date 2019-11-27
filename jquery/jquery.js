@@ -55,7 +55,8 @@ $(document).ready(function () {
     }
     modalSlideshow();
 
-    function applyFilters() {
+
+    function selectFilters() {
 
         let button = $(".activity-btn"); // filter buttons
 
@@ -63,6 +64,7 @@ $(document).ready(function () {
             $(this).toggleClass('highlight') //switch highlight class on and off clicked button
             let selected = $(".highlight") // all buttons highlighted
             let filters = [] //initialise filters variable
+            // on click of apply filters button
 
             $(selected).each(function () {
                 let highlightedIds = $(this).attr('id'); //gets id of highlighted button
@@ -70,33 +72,36 @@ $(document).ready(function () {
                 console.log(highlightedIds);
             });
 
+            console.log(filters);
+
             let applyButton = $(".apply-filters"); // apply filters button
-
-            $(applyButton).on('click', function () { // on click of apply filters button
-                console.log(filters);
-                let activity = $(".activity-section")
-                for (i = 0; i < filters.length; ++i) { // for each highlighted filter
-                    console.log(filters[i]);
-                    for (j = 0; j < activity.length; j++) {
-                        console.log(filters[i]);
-                        if ($(activity[j]).filter('filters[i]')) {
-                            // if activity section has a class of one of the highlighted filters
-                            console.log(true);
-                            console.log(activity[j]);
-                            $(activity[j]).show(); // show activity
-                        } else {
-                            console.log(false);
-                            $(activity[j]).hide(); // else hide activity
-                        }
-                    }
-                }
-
+            $(applyButton).on('click', function () {
+                applyFilters(filters);
             })
-            return false;
-            applyFilters();
         })
     }
-    applyFilters();
+
+    selectFilters();
+
+    function applyFilters(filters) {
+        console.log(filters);
+        let activity = $(".activity-section")
+        for (i = 0; i < filters.length; ++i) { // for each highlighted filter
+            console.log(filters[i]);
+            for (j = 0; j < activity.length; j++) {
+                console.log(filters[i]);
+                if ($(activity[j]).hasClass(filters[i])) {
+                    // if activity section has a class of one of the highlighted filters
+                    console.log(true);
+                    console.log(activity[j]);
+                    $(activity[j]).show(); // show activity
+                } else {
+                    console.log(false);
+                    $(activity[j]).hide(); // else hide activity
+                }
+            }
+        }
+    }
 
     function sendEmail(contactForm) {
         var customer = $('#customer-type').find(":selected").text();
@@ -125,10 +130,10 @@ $(document).ready(function () {
             );
         return false;
     }
+
 })
 
 var x = $(".activity-section");
 console.log(x);
 
 console.log(x[0]);
-console.log($(x[0]).hasClass('star'));
