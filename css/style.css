@@ -222,10 +222,13 @@ label {
 }
 
 .submit,
-.search {
+.search,
+.reset,
+.apply-filters,
+.clear-filters {
     font-family: 'Nunito', sans-serif !important;
     padding: 5px;
-    width: 100px;
+    width: 120px;
     border: solid;
     border-color:#4F756B;
     border-radius: 15px;
@@ -234,7 +237,9 @@ label {
 }
 
 .submit:hover,
-.search:hover {
+.search:hover,
+.reset:hover,
+.apply-filters {
     background-color: #4F756B;
     border-color:#4F756B;
     opacity: 0.8;

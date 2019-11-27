@@ -72,6 +72,7 @@ function initMap() {
 
     // call function to add activity markers to map
     addActivityMarkerToMap(map);
+    
     // call perform search function once map is idle
     google.maps.event.addListener(map, 'bounds_changed', function () {
         bounds = map.getBounds();
@@ -215,7 +216,6 @@ function performSearch() {
             service.nearbySearch(requestBus, handleResults);
             return false;
         }
-        console.log(selected);
     })
 }
 
