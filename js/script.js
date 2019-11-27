@@ -172,13 +172,15 @@ function performSearch() {
         types: ['bus_station']
     };
 
+    var icon = requestRestaurant.types;
+    console.log(icon);
+
     // when search button is clicked get selected value of explore options and show related markers
     $('.search').on('click', function () {
 
         // get value of selected type
         var selected = $('#explore-options').find(":selected").val();
-        var place = [];
-        console.log(selected);
+
         if (selected == 'restaurant') {
             service.nearbySearch(requestRestaurant, handleResults);
             return false;
@@ -217,25 +219,53 @@ function performSearch() {
     })
 }
 
-function handleResults(results, status) {
+function handleResults(results, status, icon) {
     if (status = google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             markers.push(results[i]);
-            createMarker(place);
+            createMarker(place, icon);
         }
     }
 }
 
 function createMarker(place) {
     marker = [];
-    var placeLocation = place.geometry.location;
+    var icon;
+    var type = $('#explore-options').find(":selected").val();
+
+    // change marker icon depending on value of selected type
+
+    if (type == 'restaurant') {
+        icon = 'icons/restaurant.png'
+    } else if (type == 'cafe') {
+        icon = 'icons/cafe.png'
+    } else if (type == 'movie-theater') {
+        icon = 'icons/movie.png'
+    } else if (type == 'bowling-alley') {
+        icon = 'icons/bowling.png'
+    } else if (type == 'tourist') {
+        icon = 'icons/tourist.png'
+    } else if (type == 'amusement') {
+        icon = 'icons/amusement.png'
+    } else if (type == 'park') {
+        icon = 'icons/park.png'
+    } else if (type == 'accommodation') {
+        icon = 'icons/bedroom.png'
+    } else if (type == 'shopping') {
+        icon = 'icons/shopping.png'
+    } else if (type == 'train') {
+        icon = 'icons/train.png'
+    } else if (type == 'bus') {
+        icon = 'icons/bus.png'
+    }
+
     var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
-        icon: 'icons/park.png'
+        icon: icon
     });
-    console.log(place);
+
     infowindow = new google.maps.InfoWindow();
     var name = place.name;
     var address = place.vicinity;
@@ -250,9 +280,3 @@ function createMarker(place) {
         infowindow.open(map, this);
     });
 }
-
-var placeFoodAndDrink = []
-var placeEntertainment = []
-var placeTransport = []
-var placeShopping = []
-var placeAccommodation = []
