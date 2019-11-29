@@ -6,6 +6,7 @@ var leeds;
 var bounds;
 var marker;
 var markers = [];
+var id;
 
 // initialise map
 function initMap() {
@@ -72,7 +73,7 @@ function initMap() {
 
     // call function to add activity markers to map
     addActivityMarkerToMap(map);
-    
+
     // call perform search function once map is idle
     google.maps.event.addListener(map, 'bounds_changed', function () {
         bounds = map.getBounds();
@@ -173,9 +174,6 @@ function performSearch() {
         types: ['bus_station']
     };
 
-    var icon = requestRestaurant.types;
-    console.log(icon);
-
     // when search button is clicked get selected value of explore options and show related markers
     $('.search').on('click', function () {
 
@@ -223,16 +221,21 @@ function handleResults(results, status, icon) {
     if (status = google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
+            var id = results[i].place_id;
+            console.log(id);
             markers.push(results[i]);
-            createMarker(place, icon);
+            createMarker(place, id);
         }
     }
 }
 
-function createMarker(place) {
+function createMarker(place, id) {
     marker = [];
     var icon;
+
     var type = $('#explore-options').find(":selected").val();
+
+    console.log(place);
 
     // change marker icon depending on value of selected type
 
@@ -260,23 +263,36 @@ function createMarker(place) {
         icon = 'icons/bus.png'
     }
 
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location,
-        icon: icon
-    });
+    id = place.place_id;
+    console.log(id);
+    service = new google.maps.places.PlacesService(map);
+    service.getDetails({ placeId: id }, callback);
 
-    infowindow = new google.maps.InfoWindow();
-    var name = place.name;
-    var address = place.vicinity;
-    var rating;
-    if (place.rating == undefined) {
-        rating = 'Not available'
-    } else {
-        rating = place.rating
+    function callback(place, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            console.log(place);
+            var website = place.website;
+            console.log(website);
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location,
+                icon: icon
+            });
+
+            infowindow = new google.maps.InfoWindow();
+            var name = place.name;
+            var address = place.vicinity;
+            var rating;
+            if (place.rating == undefined) {
+                rating = 'Not available'
+            } else {
+                rating = place.rating
+            }
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating + 'Website: ' + website);
+                infowindow.open(map, this);
+            });
+        }
     }
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating);
-        infowindow.open(map, this);
-    });
 }

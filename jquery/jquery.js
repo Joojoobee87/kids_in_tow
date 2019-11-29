@@ -132,8 +132,3 @@ $(document).ready(function () {
     }
 
 })
-
-var x = $(".activity-section");
-console.log(x);
-
-console.log(x[0]);
