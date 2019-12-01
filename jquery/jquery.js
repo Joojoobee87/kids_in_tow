@@ -73,15 +73,34 @@ $(document).ready(function () {
             });
 
             console.log(filters);
+            console.log(filters.toString());
 
             let applyButton = $(".apply-filters"); // apply filters button
             $(applyButton).on('click', function () {
                 applyFilters(filters);
+                loopActivity(filters);
             })
         })
     }
 
     selectFilters();
+
+    function loopActivity(filters) {
+        console.log(filters);
+        var e;
+        let newActivity2 = $(".activity-section");
+        for (i = 0; i < newActivity2.length; i++) {
+            d = ($(newActivity2[i]).attr('class'));
+            console.log(d);
+            for (j = 0; j < filters.length; j++) {
+                console.log(filters[j]);
+                if (d.includes(filters[j])) {
+                    console.log("hello");
+                }
+            }
+        }
+    }
+
 
     function applyFilters(filters) {
         console.log(filters);

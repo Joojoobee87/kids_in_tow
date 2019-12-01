@@ -224,6 +224,7 @@ function handleResults(results, status, icon) {
             var id = results[i].place_id;
             console.log(id);
             markers.push(results[i]);
+            console.log(markers);
             createMarker(place, id);
         }
     }
@@ -271,8 +272,6 @@ function createMarker(place, id) {
     function callback(place, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
             console.log(place);
-            var website = place.website;
-            console.log(website);
 
             var marker = new google.maps.Marker({
                 map: map,
@@ -281,6 +280,9 @@ function createMarker(place, id) {
             });
 
             infowindow = new google.maps.InfoWindow();
+            var website = `<a href="${place.website.toString()}" target="_blank">Click here..</a>`;
+            console.log(website);
+
             var name = place.name;
             var address = place.vicinity;
             var rating;
@@ -290,7 +292,7 @@ function createMarker(place, id) {
                 rating = place.rating
             }
             google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating + 'Website: ' + website);
+                infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating + '<br>' + 'Website: ' + website);
                 infowindow.open(map, this);
             });
         }
