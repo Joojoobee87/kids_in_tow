@@ -218,25 +218,19 @@ function performSearch() {
 }
 
 function handleResults(results, status, icon) {
+    console.log(results);
     if (status = google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
-            var id = results[i].place_id;
-            console.log(id);
             markers.push(results[i]);
-            console.log(markers);
-            createMarker(place, id);
+            createMarker(place);
         }
     }
 }
 
 function createMarker(place, id) {
-    marker = [];
     var icon;
-
     var type = $('#explore-options').find(":selected").val();
-
-    console.log(place);
 
     // change marker icon depending on value of selected type
 
@@ -264,37 +258,35 @@ function createMarker(place, id) {
         icon = 'icons/bus.png'
     }
 
-    id = place.place_id;
-    console.log(id);
-    service = new google.maps.places.PlacesService(map);
-    service.getDetails({ placeId: id }, callback);
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        icon: icon
+    });
 
-    function callback(place, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            console.log(place);
+    infowindow = new google.maps.InfoWindow();
 
-            var marker = new google.maps.Marker({
-                map: map,
-                position: place.geometry.location,
-                icon: icon
-            });
+    var name = place.name;
+    var address = place.vicinity;
+    var rating;
 
-            infowindow = new google.maps.InfoWindow();
-            var website = `<a href="${place.website.toString()}" target="_blank">Click here..</a>`;
-            console.log(website);
+    if (place.rating == undefined) {
+        rating = 'Not available'
+    } else {
+        rating = place.rating
+    }
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, this);
+        var id = place.place_id;
+        console.log(id);
+        service = new google.maps.places.PlacesService(map);
+        service.getDetails({ placeId: id }, callback);
+        console.log(place);
+    });
 
-            var name = place.name;
-            var address = place.vicinity;
-            var rating;
-            if (place.rating == undefined) {
-                rating = 'Not available'
-            } else {
-                rating = place.rating
-            }
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating + '<br>' + 'Website: ' + website);
-                infowindow.open(map, this);
-            });
-        }
+    function callback(place) {
+        var website = `<a href="${place.website.toString()}" target="_blank">Click here..</a>`;
+        console.log(website);
+        infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating + '<br>' + 'Website: ' + website);
     }
 }

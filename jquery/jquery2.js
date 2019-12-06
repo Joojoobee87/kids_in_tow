@@ -260,3 +260,19 @@ if (Object.values(requests).includes('icons/bus.png')) {
 } else {
     console.log("no");
 }
+/*
+
+    service = new google.maps.places.PlacesService(map);
+    service.getDetails({ placeId: id }, callback);
+    console.log(id);
+
+    function callback(place, status) {
+        console.log(place)
+        console.log(status);
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            console.log(place);
+
+                var website = `<a href="${place.website.toString()}" target="_blank">Click here..</a>`;
+    console.log(website);
+
+    + '<br>' + 'Website: ' + website
