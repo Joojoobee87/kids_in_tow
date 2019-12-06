@@ -277,6 +277,30 @@ label {
     font-family: 'Nunito', sans-serif;
 }
 
+/*--------------Privacy Page-----------------*/
+
+.privacy-container {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.privacy-container h1 {
+    text-align: center;
+}
+
+.privacy-content {
+    width: 80%;
+    height: 500px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #EF6F6C;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 15px;
+}
+
 /*--------------Responsive Design-----------------*/
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 400px) {
