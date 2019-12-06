@@ -357,7 +357,16 @@ label {
     .modal-content {
         padding: 10px;
     }
+
+    .more-info {
+        width: 80px;
+        top: 5%;
+        right: 20%;
+    font-size: 12px;
+        padding: 5px;
+    }
 }
+
 
 @media only screen and (min-device-width: 401px) and (max-device-width: 767px) {
 
@@ -431,6 +440,14 @@ label {
     .modal-content {
         padding: 10px;
     }
+
+    .more-info {
+        width: 80px;
+        top: 5%;
+        right: 10%;
+        font-size: 12px;
+        padding: 5px;
+    }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
@@ -481,6 +498,14 @@ label {
     }
     .facilities {
         font-size: 14px;
+    }
+
+    .more-info {
+        width: 80px;
+        top: 5%;
+        right: 10%;
+        font-size: 12px;
+        padding: 5px;
     }
 
 }
@@ -614,8 +639,6 @@ label {
 .more-info {
   position: absolute;
   z-index: 1;
-  width: 100px;
-  bottom: 0%;
   right: 0%;
   margin-bottom: 10px;
   margin-right: 10px;
