@@ -14,7 +14,7 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: leeds,
-        zoom: 9,
+        zoom: 10,
         styles: [
             {
                 featureType: 'landscape.natural',
