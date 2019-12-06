@@ -5,7 +5,6 @@ var infoWindow;
 var leeds;
 var bounds;
 var marker;
-var markers = [];
 var id;
 
 // initialise map
@@ -77,14 +76,9 @@ function initMap() {
     // call perform search function once map is idle
     google.maps.event.addListener(map, 'bounds_changed', function () {
         bounds = map.getBounds();
-        place = [];
         performSearch();
     })
 
-    // Deletes all markers in the array by removing references to them.
-    $('.reset').on('click', function () {
-        markers = [];
-    })
 }
 
 //function to add markers to map, iterating through the activities variable
@@ -131,11 +125,13 @@ function performSearch() {
     // define place type requests 
     var requestRestaurant = {
         bounds: map.getBounds(),
-        types: ['restaurant']
+        radius: 5000,
+        types: ['restaurant'],
     };
     var requestCafe = {
         bounds: map.getBounds(),
-        types: ['cafe']
+        radius: 5000,
+        types: ['cafe'],
     };
     var requestMovie = {
         bounds: map.getBounds(),
@@ -218,17 +214,16 @@ function performSearch() {
 }
 
 function handleResults(results, status, icon) {
-    console.log(results);
     if (status = google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
-            markers.push(results[i]);
             createMarker(place);
         }
     }
 }
 
 function createMarker(place, id) {
+
     var icon;
     var type = $('#explore-options').find(":selected").val();
 
@@ -264,29 +259,38 @@ function createMarker(place, id) {
         icon: icon
     });
 
+    // initialise info window
     infowindow = new google.maps.InfoWindow();
 
+    // names and address variables of place to use in info window
     var name = place.name;
     var address = place.vicinity;
-    var rating;
 
+    // rating variable of place - if null then show as 'not available
+    var rating;
     if (place.rating == undefined) {
         rating = 'Not available'
     } else {
         rating = place.rating
     }
+
+    // On click of marker show info window
+    // Call on Google Places Service to get website details of this place
     google.maps.event.addListener(marker, 'click', function () {
-        infowindow.open(map, this);
         var id = place.place_id;
-        console.log(id);
+        infowindow.open(map, this);
         service = new google.maps.places.PlacesService(map);
         service.getDetails({ placeId: id }, callback);
-        console.log(place);
     });
 
+    // Set info window content
     function callback(place) {
         var website = `<a href="${place.website.toString()}" target="_blank">Click here..</a>`;
-        console.log(website);
         infowindow.setContent(name + '<br>' + address + '<br>' + 'Rating: ' + rating + '<br>' + 'Website: ' + website);
     }
+
+    // Remove all explore leeds markers from map when reset is clicked
+    $('.reset').on('click', function () {
+        marker.setMap(null);
+    })
 }
