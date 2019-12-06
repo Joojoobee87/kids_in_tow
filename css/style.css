@@ -86,7 +86,6 @@ body {
     display: inline-block;
     float: top;
     z-index: 1;
-    width: 120px;
     height: 40px;
     border-radius: 0px 0px 15px 15px;
     color: white;
@@ -143,16 +142,10 @@ body {
     position: relative;
     float: left;
     width: 100%;
-    padding: 20px;
 }
 
 .filters-container{
     background-color: #90AFA2;
-}
-
-.activity-filter {
-    width: 80%;
-    margin: auto;
 }
 
 .apply-filters-container {
@@ -172,7 +165,6 @@ body {
 .about-container p {
     color: white;
     font-family: 'Gochi Hand', cursive;
-    font-size: 24px;
     font-weight: normal;
 }
 
@@ -276,30 +268,38 @@ label {
 
 #map {
     z-index: 1;
-    height: 400px;
     width: 100%;
     padding: 10px;
 }
+
 .explore {
-    margin-top: 20px;
     color: white;
     font-family: 'Nunito', sans-serif;
-
 }
-
-#explore-options {
-    width: 60%;
-    margin: auto;
-}
-
-.explore-form {
-    padding: 10px 50px;
-}
-
 
 /*--------------Responsive Design-----------------*/
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 400px) {
+
+    .activity-filter {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .tab-container {
+        padding: 5px;
+        font-size: 12px;
+
+    }
+
+    .map-container {
+        font-size: 12px;
+    }
+
+    #map {
+        height: 250px;
+    }
 
     .activity-section {
         display: block;
@@ -359,16 +359,48 @@ label {
     }
 
     .more-info {
-        width: 80px;
-        top: 5%;
-        right: 20%;
-    font-size: 12px;
+        top: 3%;
+        right: 7%;
         padding: 5px;
+    }
+
+    .tab {
+        width: 80px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        width: 80px;
+    }
+
+    .button {
+        width: 120px;
+        font-size: 12px !important;
+    }
+
+    .explore-form {
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    #explore-options {
+        width: 90%;
+        margin: auto;
+    }
+
+    .explore {
+        padding: 10px 20px;
     }
 }
 
 
 @media only screen and (min-device-width: 401px) and (max-device-width: 767px) {
+
+    .activity-filter {
+        text-align: center;
+    }
 
     .activity-section {
         display: block;
@@ -377,6 +409,19 @@ label {
         min-height: 400px !important;
         max-height: 500px;
         overflow: hidden;
+    }
+
+    .tab-container {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .map-container {
+        font-size: 12px;
+    }
+    
+    #map {
+        height: 250px;
     }
 
     .activity img {
@@ -404,7 +449,6 @@ label {
     }
 
     .activity p {
-        font-size: 12px;
         background: -webkit-linear-gradient(top, black 70%, #eee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -442,15 +486,66 @@ label {
     }
 
     .more-info {
-        width: 80px;
-        top: 5%;
+        bottom: 0%;
         right: 10%;
-        font-size: 12px;
         padding: 5px;
+    }
+
+    .btn {
+        font-size: 12px;
+        width: 80px;
+    }
+
+    .button {
+        width: 120px;
+        font-size: 12px !important;
+    }
+
+    .tab {
+        width: 80px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .explore-form {
+        padding: 10px 20px;
+    }
+
+    #explore-options {
+        width: 90%;
+        margin: auto;
+    }
+
+    .explore {
+        padding: 10px 20px;
     }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+
+    .activity-filter {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .tab-container {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .tab {
+        width: 120px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .map-container {
+        font-size: 18px;
+    }
+    
+    #map {
+        height: 400px;
+    }
 
     .activity-section {
         display: block;
@@ -482,7 +577,7 @@ label {
     }
 
     .activity p {
-        font-size: 12px;
+        font-size: 18px;
         background: -webkit-linear-gradient(top, black 70%, #eee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -501,16 +596,58 @@ label {
     }
 
     .more-info {
-        width: 80px;
-        top: 5%;
+        bottom: 0%;
         right: 10%;
-        font-size: 12px;
         padding: 5px;
     }
 
+    .btn {
+        width: 100px;
+    }
+
+    .button {
+        font-size: 18px !important;
+    }
+
+    .explore-form {
+        padding: 10px 50px;
+    }
+
+    #explore-options {
+        width: 70%;
+        margin: auto;
+    }
+
+    .explore {
+        padding: 10px 50px;
+    }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1950px) {
+
+    .tab-container {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .tab {
+        width: 120px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .activity-filter {
+        width: 80%;
+        margin: auto;
+    }
+
+    .map-container {
+        font-size: 18px;
+    }
+
+    #map {
+        height: 400px;
+    }
 
     .activity-section {
         display: block;
@@ -558,6 +695,25 @@ label {
 
     .modal-content {
         padding: 50px;
+    }
+
+    .more-info {
+        bottom: 0%;
+        right: 10%;
+        padding: 5px;
+    }
+
+    .explore-form {
+        padding: 10px 50px;
+    }
+
+    #explore-options {
+        width: 70%;
+        margin: auto;
+    }
+
+    .explore {
+        margin-top: 20px;
     }
 }
 
@@ -646,7 +802,6 @@ label {
   border-color: white !important;
   border-radius: 15px !important;
   font-family: 'Nunito', sans-serif;
-  font-size: 12px;
   padding: 5px;
   border-radius: 15px;
 }
