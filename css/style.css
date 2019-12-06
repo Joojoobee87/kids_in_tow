@@ -64,6 +64,7 @@
 /*-----------Main Body-------------*/
 
 body {
+    width: 100%;
     margin: 0 0 0 0;
     display: block;
     position: relative;
