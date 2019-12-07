@@ -1,8 +1,9 @@
 <h1># kids_in_tow</h1>
 
-One or two paragraphs providing an overview of your project.
+The aim of Kit is to help the user discover perfect days out for all of the family to enjoy. The website equips users with the tools to tailor their search for a day out in Leeds utilising some pre-built filters such as free admission and accessibility. 
 
-Essentially, this part is your sales pitch.
+Kit compliments this with an interactive Google Map where the user can search for places to further enhance their day out in Leeds, searching for places such as eateries, transport, accommodation and other activities.
+
 
 <h2>Project Brief - Interactive Frontend Development</h2>
 
@@ -15,16 +16,14 @@ In this project, you'll build an interactive front-end site. The site should res
 Users are able to interact with the site in their particular way, to achieve their personal goals and derive answers to their specific questions.
 The site owner advances their own goals by providing this functionality, potentially by being a regular user themselves.
 
-Three projects ideas/topics were given as part of the brief, of which I used the following as inspiration for my site:
+Three projects ideas/topics were given as part of the brief, of which I used the following as a basis of which to build and develop my ideas for Kit.
 
-Project Example Idea 1
+<b>Project Example Idea 1</b>
 Create a site that calls on the Google Maps API and/or the Google Places API (or similar) to allow users to search for their next holiday destination.
-
-
 
 <h2>Research</h2>
 
-As a resident of Leeds, I decided to focus my site on the city of Leeds and surrounding areas.
+The ultimate aim of Kit is to be a nationwide site covering all areas in the UK but due to resource and time constaints, it was pertinent to focus the initial scope of the project on just one area. As a resident of Leeds, I decided to focus my site on the city of Leeds and surrounding areas.
 
 <h2>Planning & Scope</h2>
 
@@ -45,16 +44,26 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 As a user, I want to:
 <ul>
-<li>Find places to visit with children
+<li>Find places to visit with children that can be enjoyed by the whole family
 <li>View on a map the places location
-<li>Explore what the place has to offer in terms of facilities
+<li>Understand what the place has to offer in terms of facilities
+<li>View pictures of the places as a visual aid
 <li>Filter results based on criteria I have specified
 <li>Find places with particular features, such as Accessible/Disability friendly
 <li>Link to further information about the place i.e. their website
-<li>Save or send details to myself/friends
+<li>Explore the surrounding area to find nearby places for example eateries, accommodation and transport links
 </ul>
 
+As a business user, I want to:
+<ul>
+  <li>Get in touch to discuss marketing of my place
+  <li>Feature my place on Kit
+</ul>
 
+As a marketer, I want to:
+<ul>
+  <li>Make contact with Kit to discuss advertising options
+</ul>
 
 <h3>Wireframes</h3>
 
@@ -69,8 +78,14 @@ Feature 1 - allows users X to achieve Y, by having them fill out Z
 ...
 
 <ul>
-<li>Google Maps
+<li>Navigation tabs - 
+<ul>
+  <li>Filters - 
+  <li>About - 
+  <li>Contact - enables users to get in touch with Kit directly. 
+  </ul>
 <li>Filters
+<li>Google Maps
 <li>Modals
 </ul>
 
