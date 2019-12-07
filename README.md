@@ -21,16 +21,15 @@ Three projects ideas/topics were given as part of the brief, of which I used the
 <b>Project Example Idea 1</b>
 Create a site that calls on the Google Maps API and/or the Google Places API (or similar) to allow users to search for their next holiday destination.
 
-<h2>Research</h2>
+<h2>Research, Planning and Scope</h2>
 
 The ultimate aim of Kit is to be a nationwide site covering all areas in the UK but due to resource and time constaints, it was pertinent to focus the initial scope of the project on just one area. As a resident of Leeds, I decided to focus my site on the city of Leeds and surrounding areas.
 
-<h2>Planning & Scope</h2>
+As a parent, its always appreciated when others pass on suggestions and recommendations of great places to visit with children. Using the Google Maps API, I want to develop a site that caters to parents like myself, looking for places to visit with their family. rporates filters to show results based on different criteria.
 
-As a parent, its always appreciated when others pass on suggestions and recommendations of great places to visit with children.
-Using the Google Maps API, I want to develop a site that caters to parents looking for places to visit that incorporates filters to rule in or out based on different criteria.
+The scope of Phase 1 would be focussed on Leeds with further areas to be developed as additional phases (not within the scope of this project).
 
-Phase 1 would be focussed on Leeds with further areas to be developed as additional phases (not within the scope of this project).
+Initial planning focussed on 
 
 
 <h2>UX Design</h2>
@@ -65,6 +64,13 @@ As a marketer, I want to:
   <li>Make contact with Kit to discuss advertising options
 </ul>
 
+As the owner/operator of the website, I want to:
+<ul>
+  <li>Attract users in search of local attractions
+  <li>Use advertising as a potential stream of revenue
+  <li>Utilise paid features on the site for business wishing to market their place
+</ul>
+
 <h3>Wireframes</h3>
 
 Add my wireframes here..........
@@ -75,34 +81,61 @@ In this section, you should go over the different parts of your project, and des
 
 Existing Features
 Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
 
 <ul>
-<li>Navigation tabs - 
+<li>Navigation tabs
 <ul>
   <li>Filters - 
-  <li>About - 
-  <li>Contact - enables users to get in touch with Kit directly. 
+  <li>About - gives users insight into the purpose of the site
+  <li>Contact - enables users to get in touch with Kit directly by completing the contact form. Users will receive email confirmation of their message as well as a message on the site to confirm that it has been sent
   </ul>
-<li>Filters
 <li>Google Maps
+<ul>
+  <li>Kit activities displayed as markers on the Google Map with info window content to define the place
+  <li>Google Maps nearby places allows users to search the area close to their place results to help them find places to      compliment their day out. The user can select from a list of place types including eateries, activities, accommodation and transport
+</ul>
+<li>Body
+<ul>
+  <li>Activities - users will see a full list of activites to browse through where filters have not been used. If filtered,   only activities which hit their defned criteria will display on site.
+</ul>
 <li>Modals
+<ul>
+  <li>Modals - to ensure a smooth experience of the site, the listed activities have a 'more info' button which links out to a pop up modal containing photos, further information, list of facilties and website links of the chosen place. When modals are closed, the original search results remain visible to the user and are not lost through page refreshing.
+  <li>Modal photos - the users can scroll through the photos of a chosen page using the image slideshow with forward and back arrows to scroll as required.
+</ul>
+<li>Footer
+<ul>
+  <li>Social Media - users can link to Kits social media pages including Facebook, Twitter and Instagram (currently linked to my personal profiles) to further enhance their user experience and where they may find additional information about the place including comments from other visitors, reviews etc.
+  <li>Privacy and T&Cs - links to Kits privacy policy and terms and conditions have been embedded in the footer should they wish to view these (currently standard wording from TermsFeed)
+</ul>
 </ul>
 
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
-Features Left to Implement
-Another feature idea.......
+During the planning and research stages of the project, the scope was refined due to resource and time constraints so some features were left out of the original brief. Further development of this website would expand on the original scope to include some of these features left to implement. These include:
 
 <ul>
-<li> Improved filters - search by location / distance from my location to place
-<li>
-</ul>
-
-Phase 1 is focussed on Leeds as the focal point of the site with the intention of further developing the site to incporate other areas.
-The project
+<li>Regions - I would like to expand Kit to cover areas nationwide
+<li>Improve filters
+  <ul>
+    <li>Expand on current filter options available
+    <li>Allow user to search by location / distance from my location to place
+    <li>Incorporate price filter setting min and max pricing
+  </ul>
+<li>Google Maps
+   <ul>
+     <li>Show my location on google maps - permission required from user to access their location services
+   </ul>
+<li>Activities
+  <ul>
+    <li>Incorporate users reviews of activities
+  </ul>
+<li>UX design
+   <ul>
+     <li>Ability for user to share, save or email details of a selected place to themselves, friends, family
+     <li>
+   </ul>
+<li>Booking options - develop booking option to allow user to book directly via Kit
 
 
 <h2>Technologies Used</h2>
@@ -124,11 +157,14 @@ The project uses JQuery to simplify DOM manipulation.
 
 Bootstrap CSS and Javascript, including:
 <ul>
-<li>Table containing font aewsome icons
+<li>Table containing font awesome icons
 <li>Modal boxes
+<li>Contact form
 </ul>
 
 <h3>Google Fonts</h3>
+
+<h3>EmailJS</h3>
 
 
 <h2>Trouble shooting</h2>
