@@ -288,7 +288,6 @@ label {
 .privacy-content,
 .terms-content {
     width: 80%;
-    height: 500px;
     margin: 40px auto;
     padding: 40px;
     background-color: #EF6F6C;
@@ -438,6 +437,22 @@ label {
     .copyright {
         font-size: 12px;
     }
+
+    .privacy-container h1,
+    .terms-container h1 {
+        font-size: 24px;
+    }
+
+    .privacy-container h3,
+    .terms-container h3 {
+        font-size: 18px;
+    }
+
+    .privacy-container p,
+    .terms-container p {
+        font-size: 12px;
+    }
+
 }
 
 
@@ -583,6 +598,22 @@ label {
     .explore {
         padding: 10px 20px;
     }
+
+    .privacy-container h1,
+    .terms-container h1 {
+        font-size: 24px;
+    }
+
+    .privacy-container h3,
+    .terms-container h3 {
+        font-size: 18px;
+    }
+
+    .privacy-container p,
+    .terms-container p {
+        font-size: 12px;
+    }
+
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
