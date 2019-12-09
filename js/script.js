@@ -112,7 +112,9 @@ function addActivityMarkerToMap(map) {
             map: map,
         });
 
-        var infoWindow = new google.maps.InfoWindow();
+        var infoWindow = new google.maps.InfoWindow({
+            zIndex: 1000,
+        });
 
         marker.addListener('click', function () {
             infoWindow.open(map, marker);
