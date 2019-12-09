@@ -88,34 +88,35 @@ function addActivityMarkerToMap(map) {
     //define places of interest including name and coordinates
 
     var activities = [
-        ["Harewood House", 53.8999, -1.5115, false, "This is the content of Harewood House"],
-        ["Stockeld Park", 53.940942, -1.431498, false, "This is the content of Stockeld Park"],
-        ["Valley Gardens", 53.9933, -1.5478, false, "This is the content of Valley Gardens"],
-        ["Roundhay Park", 53.8351, -1.4969, false, "This is the content of Roundhay Park"],
-        ["Tropical World", 53.8405, -1.5048, false, "This is the content for Tropical World"],
-        ["Leeds Urban Bike Park", 53.7525, -1.5520, false, "This is the content of Leeds Urban Bike Park"],
-        ["Royal Armouries", 53.7919, -1.5324, false, "This is the content of the Royal Armouries"],
-        ["Go Ape Leeds", 53.786964, -1.453748, false, "This is the content of Go Ape Leeds"],
-        ["Clip and Climb", 53.784064, -1.573365, false, "This is the content of Clip and Climb"],
-        ["Temple Newsam", 53.7844, -1.4597, false, "This is the content of Temple Newsam"],
-        ["Yorkshire Wildlife Park", 53.505003, -1.041154, false, "This is the content of Yorkshire Wildlife Park"],
-        ["Meanwood Valley Trail", 53.831898, -1.575373, false, "This is the content of Meanwood Valley Trail"],
-        ["Brimham Rocks", 54.0803, -1.6850, false, "This is the content of Brimham Rocks"],
-        ["The Arium", 53.840199, -1.432723, false, "This is the content of The Arium"],
+        ["Harewood House", 53.8999, -1.5115, false, "images/Harewood_House/HarewoodHouse.jpg"],
+        ["Stockeld Park", 53.940942, -1.431498, false, "images/Stockeld_Park/StockeldPark.jpg"],
+        ["Valley Gardens", 53.9933, -1.5478, false, "images/Valley_Gardens/ValleyGardens.jpg"],
+        ["Roundhay Park", 53.8351, -1.4969, false, "images/Roundhay_Park/RoundhayPark.jpg"],
+        ["Tropical World", 53.8405, -1.5048, false, "images/Tropical_World/TropicalWorld.jpg"],
+        ["Leeds Urban Bike Park", 53.7525, -1.5520, false, "images/Leeds_Urban_Bike_Park/LUBikePark.jpg"],
+        ["Royal Armouries", 53.7919, -1.5324, false, "images/Royal_Armouries/RoyalArmouries.jpg"],
+        ["Go Ape Leeds", 53.786964, -1.453748, false, "images/Go_Ape/GoApe.jpg"],
+        ["Clip and Climb", 53.784064, -1.573365, false, "images/Clip_And_Climb/ClipAndClimb.jpg"],
+        ["Temple Newsam", 53.7844, -1.4597, false, "images/Temple_Newsam/TempleNewsam.jpg"],
+        ["Yorkshire Wildlife Park", 53.505003, -1.041154, false, "images/Yorkshire_Wildlife_Park/YorkshireWP.jpg"],
+        ["Meanwood Valley Trail", 53.831898, -1.575373, false, "images/Meanwood_Valley_Trail/MeanwoodValleyTrail.jpg"],
+        ["Brimham Rocks", 54.0803, -1.6850, false, "images/Brimham_Rocks/Brimham.jpg"],
+        ["The Arium", 53.840199, -1.432723, false, "images/The_Arium/TheArium.jpg"],
     ]
 
-    for (var i = 0; i < activities.length; i++) {
+    for (let i = 0; i < activities.length; i++) {
 
-        var activity = activities[i];
-        marker = new google.maps.Marker({
+        let activity = activities[i];
+        let marker = new google.maps.Marker({
             position: { lat: activity[1], lng: activity[2] },
             map: map,
         });
-        infowindow = new google.maps.InfoWindow();
 
-        google.maps.event.addListener(marker, 'click', function () {
-            infowindow.setContent(activity[4]);
-            infowindow.open(map, this);
+        var infoWindow = new google.maps.InfoWindow();
+
+        marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+            infoWindow.setContent(`<h5 style="color:#4F756B; font-family: 'Nunito';">${activity[0]}</h5>` + `<img src="${activity[4].toString()}" alt="activity pic" height="120" width="180"></img>`);
         });
     }
 }
