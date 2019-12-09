@@ -77,28 +77,16 @@ $(document).ready(function () {
             let applyButton = $(".apply-filters"); // apply filters button
             $(applyButton).on('click', function () {
                 applyFilters(filters);
-                loopActivity(filters);
+            })
+
+            let clearButton = $(".clear-filters"); // clear filters button
+            $(clearButton).on('click', function () {
+                clearFilters(filters);
             })
         })
     }
 
     selectFilters();
-
-    function loopActivity(filters) {
-        console.log(filters);
-        var e;
-        let newActivity2 = $(".activity-section");
-        for (i = 0; i < newActivity2.length; i++) {
-            d = ($(newActivity2[i]).attr('class'));
-            console.log(d);
-            for (j = 0; j < filters.length; j++) {
-                console.log(filters[j]);
-                if (d.includes(filters[j])) {
-                    console.log("hello");
-                }
-            }
-        }
-    }
 
     function applyFilters(filters) {
         console.log(filters);
@@ -118,5 +106,15 @@ $(document).ready(function () {
                 }
             }
         }
+    }
+
+    function clearFilters(filters) {
+        console.log(filters);
+        let button = $(".activity-btn"); // filter buttons
+        let activity = $(".activity-section")
+        filters = [];
+        console.log(button);
+        $(button).removeClass("highlight");
+        $(activity).show();
     }
 });
