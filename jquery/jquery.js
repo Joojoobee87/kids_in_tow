@@ -77,6 +77,9 @@ $(document).ready(function () {
             let applyButton = $(".apply-filters"); // apply filters button
             $(applyButton).on('click', function () {
                 applyFilters(filters);
+                $('html, body').animate({
+                    scrollTop: ($('.activity-section').first().offset().top)
+                }, 800);
             })
 
             let clearButton = $(".clear-filters"); // clear filters button
