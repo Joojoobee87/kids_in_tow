@@ -1096,6 +1096,21 @@ td {
 
 /*-------------------Footer------------------*/
 
+.top {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    font-family: 'Nunito', sans-serif !important;
+    padding: 5px;
+    border: solid;
+    border-color:#4F756B;
+    border-radius: 15px;
+    color: white;
+    background-color:#4F756B;
+    margin-right: 5px;
+    float: right;
+}
 
 .footer-section{
     display: block;

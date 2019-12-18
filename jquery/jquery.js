@@ -120,4 +120,13 @@ $(document).ready(function () {
         $(button).removeClass("highlight");
         $(activity).show();
     }
+
+    function scrollTop() {
+        $(".top").on('click', function () {
+            $('html, body').animate({
+                scrollTop: ($('.nav-section').offset().top)
+            }, 1000);
+        })
+    }
+    scrollTop();
 });
