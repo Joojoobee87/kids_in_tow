@@ -140,7 +140,7 @@ Font sample – branding and about page:
 ![](/images/Google_Fonts/GochiHand.jpg)
 
 Font sample – site content
-![](/images/Nunito.jpg)
+![](/images/Google_Fonts/Nunito.jpg)
 
 ### Colour
 
