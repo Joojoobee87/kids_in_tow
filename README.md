@@ -153,19 +153,27 @@ Colour pallet:
 Shades of green were picked as the main colour with pink and orange introduced as split complementary colours, two colours both adjacent to their complement.
 
 **#4F756B**
+
 <img src="/images/Coolors/4F756B.jpg" width="200px" height="300px">
+
 A medium-dark green has been used as the main colour of the site. I wanted the colour to reference the outdoor references of the site, 
 
 **#90AFA2**
-![](/images/Coolors/90AFA2.jpg =250x250)
+
+<img src="/images/Coolors/90AFA2.jpg" width="200px" height="300px">
+
 A lighter green of the same tone has been used for the filters tab
 
 **#EF6F6C – pink**
-![](/images/Coolors/EF6F6C.jpg =250x250)
+
+<img src="/images/Coolors/EF6F6C.jpg" width="200px" height="300px">
+
 Pink was chosen as one of the two vibrant splashes of colour utilised in some elements of the site. Pink was chosen for the ‘Contact’ tab, the ‘Explore Leeds’ container, the filter buttons on the filter tab and their corresponding filter icons in the activity. 
 
 **#FE7F2D – orange**
-![](/images/Coolors/FE7F2D.jpg =250x250)
+
+<img src="/images/Coolors/FE7F2D.jpg" width="200px" height="300px">
+
 Orange was another colour chosen to introduce splashes of vibrancy to the site and is used in the ‘About’ tab, the footer and horizontal rules between the activities. 
 
 The colour scheme has also been incorporated into the Google Map, making the map colour scheme unique to the KIT website, befitting and consistent with overall theme. 
