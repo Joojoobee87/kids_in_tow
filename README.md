@@ -153,7 +153,7 @@ Colour pallet:
 Shades of green were picked as the main colour with pink and orange introduced as split complementary colours, two colours both adjacent to their complement.
 
 **#4F756B**
-![](/images/Coolors/4F756B.jpg =250x250)
+<img src="/images/Coolors/4F756B.jpg" width="200px" height="300px">
 A medium-dark green has been used as the main colour of the site. I wanted the colour to reference the outdoor references of the site, 
 
 **#90AFA2**
