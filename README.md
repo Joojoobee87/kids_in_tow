@@ -55,6 +55,8 @@ A [link](documentation/KidsInTow.pdf "Kids in tow - wireframes")
 -	**Filters** – filters allow the user to search for activities that fall into one of the pre-defined categories including; featured, accessible, challenging, outdoors, indoors, free. When the apply button is clicked, the user is taken to the section of the page where the activities are displayed. The user can click on the ‘Clear’ button to remove all highlighted filters and reset the activities displayed.
 -	**About** - when the about tab is clicked, the content drops down to reveal further information and giving users insight into the purpose of the site
 -	**Contact** - enables users to get in touch with Kit directly by completing the contact form. Users will receive email confirmation of their message as well as a message on the site to confirm that their enquiry has been sent. KIT also receive an email with details of the user and their enquiry message.
+The contact form response and email templates can be viewed [here](documentation/contact_form.pdf "Contact form example")
+
 
 **Google Maps**
 
@@ -74,7 +76,7 @@ A [link](documentation/KidsInTow.pdf "Kids in tow - wireframes")
 -	Social Media - users can link to Kits social media pages including Facebook, Twitter and Instagram (currently linked to my personal profiles) to further enhance their user experience and where they may find additional information about the place including comments from other visitors, reviews etc.
 -	Privacy and T&Cs - links to Kits privacy policy and terms and conditions have been embedded in the footer should they wish to view these (currently standard wording from TermsFeed)
 
-### **Features left to implement: **
+### Features left to implement
 
 During the planning and research stages of the project, the scope was refined due to resource and time constraints so some features were left out of the original brief. Further development of this website would expand on the original scope to include some of these features left to implement. These are detailed below:
 
@@ -108,9 +110,9 @@ During the planning and research stages of the project, the scope was refined du
 
 The main content of the site flows in a vertical direction. The top of the page contains the main navigation bar, tabs and the homepage image to capture the user’s attention. Where filters are highlighted and applied, as the user clicks ‘Apply’ the are redirected to the first results within the Activities section of the homepage. 
 
-As the users scrolls down the page, the ‘Explore Leeds’ section comes into view. The search form and Google Map are contained within the same section to ensure 
+As the users scrolls down the page, the ‘Explore Leeds’ section comes into view. The search form and Google Map are contained within the same container.
 
-With vertical flow and scrolling, the activity results occupy a single column which is responsive in its design, reformatting the content according the device size. 
+With vertical flow and scrolling, the activity results occupy a single column which is responsive in its design, reformatting and styling the content according the device size. 
 
 ### Navigation
 
@@ -130,29 +132,49 @@ The ‘type’ attribute of the input field ensures that the user is only able t
 
 ### Typography
 
-I had an idea of the font style I’d like to include in this project, something clear and simple with a soft undertone. I browsed **Google Fonts** and selected several for my shortlist, then decided upon Catamaran as the font choice for this project.
+Google Fonts was used to browse and select the font in use on the website and two fonts were identified as a requirement for the project. The first was to be used in the KIT branding, strap line and About page – I wanted something that looked handwritten yet informal enough for the user to relate to the person behind KIT, designed to connect to the user on a more personal level. The second font was to be used for all of the websites which needed to be clear and simple to read, particularly in the more text heavy areas of content.
 
-Font sample:
-![](/static/images/Catamaran.jpg)
+The following fonts were selected for inclusion in the project:
+
+Font sample – branding and about page:
+![](/images/Google_Fonts/GochiHand.jpg)
+
+Font sample – site content
+![](/images/Nunito.jpg)
 
 ### Colour
 
-**Coolors** (https://coolors.co/) was used to generate and experiment with different colour choices and colour combinations. As my site is mostly aimed at families with children, I wanted to introduce a colour scheme that had elements of maturity yet including vibrant and playful colours that would also link well with kids. 
+**Coolors** (https://coolors.co/) was used to generate and experiment with different colour choices and colour combinations. As my site is mostly aimed at families with children, I wanted to introduce a colour scheme that had elements of maturity yet including vibrant and playful colours that would also link well with the site being focussed on kids. 
 
-I wanted to use a vibrant but fresh colour and apply it as consistent branding across the site. I wanted a colour that would be unlikely to appear in images of recipe dishes to ensure enough contrast between branding and recipe images. The final colour selections can be seen below, with #56A3A6 chosen for the project.
+The final colour selections can be seen below.
 
 Colour pallet:
-![](/static/images/Whats4T_colours.jpg)
+![](/images/Coolors/KIT_colours.jpg)
+Shades of green were picked as the main colour with pink and orange introduced as split complementary colours, two colours both adjacent to their complement.
 
-A single colour scheme has been maintained throughout for consistency, applied to header and footer, text headings and buttons with further splashes of colour introduced as a result of image content. I considered the use of more than one colour for the project but thought it could risk the site looking too busy and distracting from the content and purpose. The inclusion of vibrant recipe images throughout the site introduces enough colour without it needing anything further.
+**#4F756B**
+![](/images/Coolors/4F756B.jpg)
+A medium-dark green has been used as the main colour of the site. I wanted the colour to reference the outdoor references of the site, 
 
-A fixed background image was selected to create visual appeal, showing a variety of different and colourful ingredients, hoping to inject inspiration and capture the user’s attention. The background image has been overlaid with a white section to hold the main content of the page, providing contrast from the background image and to make text content and additional images clearly visible.
+**#90AFA2**
+![](/images/Coolors/90AFA2.jpg)
+A lighter green of the same tone has been used for the filters tab
+
+**#EF6F6C – pink**
+![](/images/Coolors/EF6F6C.jpg)
+Pink was chosen as one of the two vibrant splashes of colour utilised in some elements of the site. Pink was chosen for the ‘Contact’ tab, the ‘Explore Leeds’ container, the filter buttons on the filter tab and their corresponding filter icons in the activity. 
+
+**#FE7F2D – orange**
+![](/images/Coolors/FE7F2D.jpg)
+Orange was another colour chosen to introduce splashes of vibrancy to the site and is used in the ‘About’ tab, the footer and horizontal rules between the activities. 
+
+The colour scheme has also been incorporated into the Google Map, making the map colour scheme unique to the KIT website, befitting and consistent with overall theme. 
 
 ### Icons
 
-**Font Awesome** has been utilised for the various icons in use throughout the site. These include the social media icons for Facebook, Twitter and Instagram as well as icons for use in the recipes to display prep, cooking and total time and numbers of views of the recipe. The icon images are relevant to their function, for example a ‘clock’ icon depicts time and an ‘eye’ icon for views.
+**Font Awesome** has been utilised for the various icons in use throughout the site. Icons have been used for the activity filters, the facilities icons listed within the modal of each activity and in the social media icons embedded in the footer including Facebook, Twitter and Instagram. 
 
-The social media icons have been included in the footer in a linear format with clear distinction between them and direct users to the relevant social media site upon click.
+I have tried to match icons closely depicting their function including the WiFi symbol for internet access, a baby in a nappy for baby changing facilities, an ‘i’ symbol for information centres etc. I find the use of icons very powerful in aiding user understanding whilst keeping word content minimal.
 
 ## Technologies Used
 
@@ -171,17 +193,23 @@ The social media icons have been included in the footer in a linear format with 
 I created a testing framework in excel with specific testing scripts and scenarios to test out on each of the pages / functions included throughout the project. The framework included the page / function being tested, the test carried out and the expected result.
 The project was designed to be responsive, adapting structure and formatting according to the user’s device. Consequently, testing needed to be carried out on a variety of different sized devices as well as on different browsers to ensure that the pages and functionality responded as expected across a range of different technologies.
 Where tests failed, the relevant alterations were made to the code, changes saved and committed and the test was repeated to ensure it responded correctly.
+### Issues
+Aside from small formatting and styling issues in the code, I encountered a couple of more significant issues, these included:
+-	Google Map not loading on initial page load, without having to complete a browser refresh. 
+-	I would have liked the filters to show only activities that met all of the filters highlighted. At the moment, the website displays any activity that has at least one of the highlighted filters. In future, if developing the site further, I would like to enhance the capability of the filters to only show activities that exactly match the users criteria – this would be done as part of the overall development of the filters.
+-	When clicking the ‘Apply’ button on the filters tab, where more than one filter is selected, or where the user has already started scrolling, the function scrolls the page up and down in a vertical motion, rather than once down to the activity section.
 A link to the Milestone 2 Testing excel can be found [here](documentation/MS2_Testing.xlsx "Milestone 2 Testing – Kids in tow")
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+**GitPod and GitHub**
+The project was written in GitPod, a new **kids_in_tow** repository was created in GitHub and regular commits were made throughout the project build and pushed out to the repository.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
--	Different values for environment variables (Heroku Config Vars)?
--	Different configuration files?
--	Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+Throughout testing, code was updated / amended and the changes committed and pushed back out to GitHub. 
+
+The code can be run locally in GitPod using the command:
+python3 -m http.server 
+The deployed website link is: https://joojoobee87.github.io/kids_in_tow/
 
 
 ## Credits
@@ -206,13 +234,16 @@ I used various sites to gain inspiration, information and content for the places
 
 -	Privacy Policy template wording - https://www.termsfeed.com/blog/sample-privacy-policy-template/
 
+All activity content has been inspired by the activities included in the project either directly through my own visits or via their website linked above. The websites above were used as an additional source of information, particularly for noting things like their accessibility policies and onsite facilities but all activity wording content has been my own or adapted / paraphrased from the sites linked above and not scraped directly.
+
 ### Media
 
 **Canva**
 
 Canva is a free online design tool allowing users to design many different types of media including mockups, leaflets, flyers, posters, logos etc. Canva has an extensive photo library offering millions of stock photos, fonts, icons, shapes and graphics.
 
-General photos used throughout the site including homepage image were downloaded from Canva. Homepage image courtesy of XXXXX
+General photos used throughout the site including homepage image were downloaded from Canva. Homepage image courtesy of Susanne Jutzeler from Pexels at Canva.
+https://www.canva.com/photos/MADGv2UTqSs-two-girls-sitting-on-brown-bench-near-body-of-water/
 
 The majority of photos included in the website were taken by myself however, there may be a couple of images taken from the sites listed above to enhance the number of images in the carousel where I didn’t have images of my own to include.
 
