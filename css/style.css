@@ -453,6 +453,11 @@ label {
         font-size: 12px;
     }
 
+    .info-window-image {
+        height: 80px;
+        width: 120px;
+    }
+
 }
 
 
