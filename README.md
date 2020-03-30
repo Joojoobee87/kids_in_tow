@@ -44,8 +44,7 @@ As the owner/operator of the website, I want to:
 
 Wireframes for the project were drafted on the Balsamiq Wireframes application.
 
-The wireframes and notes to accompany them can be accessed here:
-A [link](documentation/KidsInTow.pdf "Kids in tow - wireframes")
+The wireframes and notes to accompany them can be accessed [here](documentation/KidsInTow.pdf "Kids in tow - wireframes")
 
 ## Features
 
@@ -118,7 +117,7 @@ With vertical flow and scrolling, the activity results occupy a single column wh
 
 The main navigation bar occupies a standard horizontal space at the top of the page and includes the main KIT branding and a strap line ‘Kids in tow…off we go’. The KIT branding contains a link to the main index.html page so users can always get back to the homepage regardless of which page they are on.
 
-Rather than incorporate navigation links in the navbar at the top, tabs have been included which allow users to toggle on or off some of the key features of the site including the ‘filters’, ‘about’ content and ‘contact’ form. Users can toggle these sections on or off as required but the remain on the main page of the site throughout. 
+Rather than incorporate navigation links in the navbar at the top, tabs have been included which allow users to toggle on or off some of the key features of the site including the ‘filters’, ‘about’ content and ‘contact’ form. Users can toggle these sections on or off as required but they remain on the main page of the site throughout. 
 
 The footer provides additional navigation options including links out to social media pages and separate Privacy and Terms & Conditions pages should the user wish to review this information.
 
@@ -132,7 +131,7 @@ The ‘type’ attribute of the input field ensures that the user is only able t
 
 ### Typography
 
-Google Fonts was used to browse and select the font in use on the website and two fonts were identified as a requirement for the project. The first was to be used in the KIT branding, strap line and About page – I wanted something that looked handwritten yet informal enough for the user to relate to the person behind KIT, designed to connect to the user on a more personal level. The second font was to be used for all of the websites which needed to be clear and simple to read, particularly in the more text heavy areas of content.
+Google Fonts was used to browse and select the font in use on the website and two fonts were identified as a requirement for the project. The first was to be used in the KIT branding, strap line and About page – I wanted something that looked handwritten yet legible and informal enough for the user to relate to the person behind KIT, aiming to connect to the user on a more personal level. The second font was to be used for all of the websites which needed to be clear and simple to read, particularly in the more text heavy areas of content.
 
 The following fonts were selected for inclusion in the project:
 
@@ -176,7 +175,7 @@ Pink was chosen as one of the two vibrant splashes of colour utilised in some el
 
 Orange was another colour chosen to introduce splashes of vibrancy to the site and is used in the ‘About’ tab, the footer and horizontal rules between the activities. 
 
-The colour scheme has also been incorporated into the Google Map, making the map colour scheme unique to the KIT website, befitting and consistent with overall theme. 
+The colour scheme has also been incorporated into the Google Map, making the map colour scheme unique to the KIT website, befitting and consistent with overall theme.
 
 ### Icons
 
@@ -195,16 +194,20 @@ I have tried to match icons closely depicting their function including the WiFi 
 -	Google Fonts
 -	EmailJS
 -	Font awesome
+-	Coolors
 
 ## Testing
 
 I created a testing framework in excel with specific testing scripts and scenarios to test out on each of the pages / functions included throughout the project. The framework included the page / function being tested, the test carried out and the expected result.
+
 The project was designed to be responsive, adapting structure and formatting according to the user’s device. Consequently, testing needed to be carried out on a variety of different sized devices as well as on different browsers to ensure that the pages and functionality responded as expected across a range of different technologies.
+
 Where tests failed, the relevant alterations were made to the code, changes saved and committed and the test was repeated to ensure it responded correctly.
+
 ### Issues
 Aside from small formatting and styling issues in the code, I encountered a couple of more significant issues, these included:
 -	Google Map not loading on initial page load, without having to complete a browser refresh. 
--	I would have liked the filters to show only activities that met all of the filters highlighted. At the moment, the website displays any activity that has at least one of the highlighted filters. In future, if developing the site further, I would like to enhance the capability of the filters to only show activities that exactly match the users criteria – this would be done as part of the overall development of the filters.
+-	I would have liked the filters to show only activities that met all of the filters highlighted. At the moment, the website displays any activity that has at least one of the highlighted filters. In future, if developing the site further, I would like to enhance the capability of the filters to only show activities that exactly match the user’s criteria – this would be done as part of the overall development of the filters.
 -	When clicking the ‘Apply’ button on the filters tab, where more than one filter is selected, or where the user has already started scrolling, the function scrolls the page up and down in a vertical motion, rather than once down to the activity section.
 A link to the Milestone 2 Testing excel can be found [here](documentation/MS2_Testing.xlsx "Milestone 2 Testing – Kids in tow")
 
@@ -241,6 +244,8 @@ I used various sites to gain inspiration, information and content for the places
 -	Roundhay Park - https://www.roundhaypark.org.uk/
 
 -	Privacy Policy template wording - https://www.termsfeed.com/blog/sample-privacy-policy-template/
+
+-	Coolors – colour generator https://coolors.co/
 
 All activity content has been inspired by the activities included in the project either directly through my own visits or via their website linked above. The websites above were used as an additional source of information, particularly for noting things like their accessibility policies and onsite facilities but all activity wording content has been my own or adapted / paraphrased from the sites linked above and not scraped directly.
 
