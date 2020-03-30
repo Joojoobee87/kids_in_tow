@@ -15,6 +15,7 @@ $(document).ready(function () {
     }
     dropdownContainers();
 
+    // function to scroll through the carousel of images in the modal
     function modalSlideshow() {
         $('.modal').on('shown.bs.modal', function (event) {
             var modal = $(this)
@@ -44,7 +45,6 @@ $(document).ready(function () {
                     $(images[i]).css("display", "none");
                 }
                 index--;
-                console.log(index);
                 if (index < 1) {
                     $(images[images.length + 1]).css("display", "block");
                     index = images.length
@@ -68,18 +68,18 @@ $(document).ready(function () {
             $(selected).each(function () {
                 let highlightedIds = $(this).attr('id'); //gets id of highlighted button
                 filters.push(highlightedIds);
-                console.log(highlightedIds);
             });
-
-            console.log(filters);
-            console.log(filters.toString());
 
             let applyButton = $(".apply-filters"); // apply filters button
             $(applyButton).on('click', function () {
+                //$('html, body').animate({
+                //    scrollTop: ($('.activity-section').first().offset().top)
+                //}, 800);
                 applyFilters(filters);
-                $('html, body').animate({
-                    scrollTop: ($('.activity-section').first().offset().top)
-                }, 800);
+                $('.activity-section')[0].scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             })
 
             let clearButton = $(".clear-filters"); // clear filters button
@@ -91,36 +91,31 @@ $(document).ready(function () {
 
     selectFilters();
 
+    // apply selected filters to show those that match one of the highlighted filters
     function applyFilters(filters) {
-        console.log(filters);
         let activity = $(".activity-section")
         for (i = 0; i < filters.length; ++i) { // for each highlighted filter
-            console.log(filters[i]);
             for (j = 0; j < activity.length; j++) {
-                console.log(filters[i]);
                 if ($(activity[j]).hasClass(filters[i])) {
                     // if activity section has a class of one of the highlighted filters
-                    console.log(true);
-                    console.log(activity[j]);
                     $(activity[j]).show(); // show activity
                 } else {
-                    console.log(false);
                     $(activity[j]).hide(); // else hide activity
                 }
             }
         }
     }
 
+    // clear all highlighted filters and show all activities
     function clearFilters(filters) {
-        console.log(filters);
         let button = $(".activity-btn"); // filter buttons
         let activity = $(".activity-section")
         filters = [];
-        console.log(button);
         $(button).removeClass("highlight");
         $(activity).show();
     }
 
+    // function to allow users to scroll to the top of page from any position on the page
     function scrollTop() {
         $(".top").on('click', function () {
             $('html, body').animate({
