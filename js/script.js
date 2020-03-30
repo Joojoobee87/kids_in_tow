@@ -116,7 +116,7 @@ function addActivityMarkerToMap(map) {
 
         marker.addListener('click', function () {
             infoWindow.open(map, marker);
-            infoWindow.setContent(`<h5 style="color:#4F756B; font-family: 'Nunito';">${activity[0]}</h5>` + `<img src="${activity[3].toString()}" alt="activity pic" height="120" width="180"></img>`);
+            infoWindow.setContent(`<h5 style="color:#4F756B; font-family: 'Nunito';">${activity[0]}</h5>` + `<img src="${activity[3].toString()}" class="info-window-image" alt="activity pic" height="120" width="180"></img>`);
         });
     }
 }
