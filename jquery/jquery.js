@@ -63,8 +63,8 @@ $(document).ready(function () {
             $(this).toggleClass('highlight') //switch highlight class on and off clicked button
             let selected = $(".highlight") // all buttons highlighted
             let filters = [] //initialise filters variable
+            
             // on click of apply filters button
-
             $(selected).each(function () {
                 let highlightedIds = $(this).attr('id'); //gets id of highlighted button
                 filters.push(highlightedIds);
@@ -72,9 +72,6 @@ $(document).ready(function () {
 
             let applyButton = $(".apply-filters"); // apply filters button
             $(applyButton).on('click', function () {
-                //$('html, body').animate({
-                //    scrollTop: ($('.activity-section').first().offset().top)
-                //}, 800);
                 applyFilters(filters);
                 $('.activity-section')[0].scrollIntoView({
                     behavior: "smooth",
@@ -88,7 +85,6 @@ $(document).ready(function () {
             })
         })
     }
-
     selectFilters();
 
     // apply selected filters to show those that match one of the highlighted filters
