@@ -1,4 +1,4 @@
-/*----------Navigation------------*/
+/*-------------------------------Navigation-------------------------------*/
 
 .nav-section{
     display: block;
@@ -54,7 +54,7 @@
     text-align: center;
 }
 
-/*-----------Main Body-------------*/
+/*--------------------------------------Main Body---------------------------------------*/
 
 body {
     width: 100%;
@@ -64,7 +64,7 @@ body {
     float: left;
 }
 
-/*-------------Dropdown Tab section--------------*/
+/*-----------------------------------Dropdown Tab section-------------------------------*/
 
 .tabs {
     display: block;
@@ -98,7 +98,7 @@ body {
     background-color: #EF6F6C;
 }
 
-/*------------Homepage Image-----------*/
+/*-------------------------------------Homepage Image---------------------------------*/
 
 .homepage-image-section {
     display: block;
@@ -128,7 +128,7 @@ body {
     object-fit: cover;
 }
 
-/*-----------Filters---------------*/
+/*------------------------------------------Filters----------------------------------------*/
 
 .tab-container {
     display: none;
@@ -193,7 +193,7 @@ i {
     font-size: 18px;
 }
 
-/*-----------Contact Us----------*/
+/*-----------------------------------------Contact Us------------------------------------*/
 
 .contact-form {
     width: 80%;
@@ -240,7 +240,7 @@ label {
     font-weight: normal;
 }
 
-/*-----------Google Map-----------*/
+/*----------------------------------------Google Map--------------------------------------*/
 
 .map-section {
     display: block;
@@ -270,7 +270,7 @@ label {
     font-family: 'Nunito', sans-serif;
 }
 
-/*--------------Privacy Page-----------------*/
+/*-------------------------------------------Privacy Page------------------------------------*/
 
 .privacy-container,
 .terms-container {
@@ -296,7 +296,7 @@ label {
     border-radius: 15px;
 }
 
-/*--------------Responsive Design-----------------*/
+/*----------------------------------------Responsive Design--------------------------------*/
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 400px) {
 
@@ -332,7 +332,6 @@ label {
     .tab-container {
         padding: 5px;
         font-size: 12px;
-
     }
 
     .contact {
@@ -554,7 +553,8 @@ label {
     }
 
     .activity p {
-        background: -webkit-linear-gradient(top, black 70%, #eee);
+        background: linear-gradient(to bottom, black 70%, #eee);
+        -webkit-linear-gradient(to bottom, black 70%, #eee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         height: 125px;
