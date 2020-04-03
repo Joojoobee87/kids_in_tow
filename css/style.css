@@ -335,6 +335,10 @@ label {
 
     }
 
+    .contact {
+        font-size: 16px;
+    }
+
     .map-container {
         font-size: 12px;
         margin: 20px auto;
@@ -384,13 +388,13 @@ label {
     }
 
     .modal-image {
-        max-width: 300px;
-        max-height: 200px;
+        max-width: 240px;
+        max-height: 180px;
     }
 
     .slide-image {
-        width: 300px;
-        height: 200px;
+        width: 240px;
+        height: 180px;
     }
 
     .modal-content {
@@ -453,9 +457,22 @@ label {
         font-size: 12px;
     }
 
+    .privacy-content,
+    .terms-content {
+        padding: 15px;
+    }
+
     .info-window-image {
-        height: 80px;
-        width: 120px;
+        height: 60px;
+        width: 90px;
+    }
+
+    .info-window-heading {
+        font-size: 16px;
+    }
+
+    .fa-window-close {
+        padding: 15px;
     }
 
 }
@@ -484,6 +501,10 @@ label {
     .kit-tagline span {
         padding-top: 20px;
         font-size: 18px;
+    }
+
+    .contact {
+        font-size: 16px;
     }
 
     .activity-filter {
@@ -622,6 +643,10 @@ label {
     .info-window-image {
         height: 80px;
         width: 120px;
+    }
+
+    .fa-window-close {
+        padding: 15px;
     }
 
 }
