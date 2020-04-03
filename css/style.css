@@ -553,10 +553,7 @@ label {
     }
 
     .activity p {
-        background: linear-gradient(to bottom, black 70%, #eee);
-        -webkit-linear-gradient(to bottom, black 70%, #eee);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background: linear-gradient(to bottom, black 70%, #eee 30%);
         height: 125px;
         padding-bottom: 10px;
     }
