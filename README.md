@@ -56,7 +56,6 @@ The wireframes and notes to accompany them can be accessed [here](documentation/
 -	**Contact** - enables users to get in touch with Kit directly by completing the contact form. Users will receive email confirmation of their message as well as a message on the site to confirm that their enquiry has been sent. KIT also receive an email with details of the user and their enquiry message.
 The contact form response and email templates can be viewed [here](documentation/contact_form.pdf "Contact form example")
 
-
 **Google Maps**
 
 -	All Kit activities are displayed as markers on the Google Map. When the marker is clicked, an info window is displayed revealing content including the name of the activity and a picture.
@@ -204,13 +203,13 @@ The project was designed to be responsive, adapting structure and formatting acc
 
 Where tests failed, the relevant alterations were made to the code, changes saved and committed and the test was repeated to ensure it responded correctly.
 
-### Issues
-Aside from small formatting and styling issues in the code, I encountered a couple of more significant issues, these included:
--	Google Map not loading on initial page load, without having to complete a browser refresh. 
--	I would have liked the filters to show only activities that met all of the filters highlighted. At the moment, the website displays any activity that has at least one of the highlighted filters. In future, if developing the site further, I would like to enhance the capability of the filters to only show activities that exactly match the user’s criteria – this would be done as part of the overall development of the filters.
--	When clicking the ‘Apply’ button on the filters tab, where more than one filter is selected, or where the user has already started scrolling, the function scrolls the page up and down in a vertical motion, rather than once down to the activity section.
 A link to the Milestone 2 Testing excel can be found [here](documentation/MS2_Testing.xlsx "Milestone 2 Testing – Kids in tow")
 
+### Issues
+Generally, issues that cropped up throughout the build were rectified as / when they were noticed during development. Testing took place once the build was finalised and the issues observed were corrected and code committed and pushed back out to GitHub. Aside from small formatting and styling issues in the code, I encountered a couple of more significant issues, these include:
+-	Google Map not loading on initial page load, without having to complete a browser refresh. This was rectified by removing the ‘async’ attribute from the Google Maps script tag. The Google Map now loads as expected on all platforms and browsers apart from Internet Explorer. I have done extensive research into this issue but as yet have been unable to find a solution to make the map load in IE. This is a ‘known issue’ and something that will be addressed should further development of the site take place in future.
+-	When clicking the ‘Apply’ button on the filters tab, after the initial click, any subsequent clicks or where the user had already started scrolling, the page would scroll to the top and back down to activities more than once, moving up and down in a vertical motion, rather than once down to the activity section. I replaced the existing function with a function using the ‘scrollIntoView()’ method which fixed the issue. 
+-	I would have liked the filters to show only activities that met all of the filters highlighted. At the moment, the website displays any activity that has at least one of the highlighted filters. In future, if developing the site further, I would like to enhance the capability of the filters to only show activities that exactly match the user’s criteria – this would be done as part of the overall development of the filters.
 ## Deployment
 
 **GitPod and GitHub**
@@ -258,11 +257,11 @@ Canva is a free online design tool allowing users to design many different types
 General photos used throughout the site including homepage image were downloaded from Canva. Homepage image courtesy of Susanne Jutzeler from Pexels at Canva.
 https://www.canva.com/photos/MADGv2UTqSs-two-girls-sitting-on-brown-bench-near-body-of-water/
 
-The majority of photos included in the website were taken by myself however, there may be a couple of images taken from the sites listed above to enhance the number of images in the carousel where I didn’t have images of my own to include.
+The majority of photos included in the website were taken by myself however, there are a couple of images taken from the sites listed above to enhance the number of images in the carousel where I didn’t have images of my own to include.
 
 ### Acknowledgements
 
-I received inspiration for this project from my beautiful little boy Alfie. We are so lucky to have an array fantastic places to enjoy right on our doorstep. We love exploring the many wonderful places surrounding our home in Leeds and hope that we can inspire others to love these places as much as we do. 
+I received inspiration for this project from my beautiful little boy Alfie. We are so lucky to have an array of fantastic places to enjoy right on our doorstep. We love exploring the many wonderful places surrounding our home in Leeds and hope that we can inspire others to love these places as much as we do. 
 
 
 
