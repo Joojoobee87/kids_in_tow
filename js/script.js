@@ -82,11 +82,9 @@ function initMap() {
 }
 
 //function to add markers to map, iterating through the activities variable
-
 function addActivityMarkerToMap(map) {
 
     //define activities including name, coordinates and image
-
     var activities = [
         ["Harewood House", 53.8999, -1.5115, "images/Harewood_House/HarewoodHouse.jpg"],
         ["Stockeld Park", 53.940942, -1.431498, "images/Stockeld_Park/StockeldPark.jpg"],
@@ -116,7 +114,7 @@ function addActivityMarkerToMap(map) {
 
         marker.addListener('click', function () {
             infoWindow.open(map, marker);
-            infoWindow.setContent(`<h5 style="color:#4F756B; font-family: 'Nunito';">${activity[0]}</h5>` + `<img src="${activity[3].toString()}" class="info-window-image" alt="activity pic" height="120" width="180"></img>`);
+            infoWindow.setContent(`<h5 class="info-window-heading" style="color:#4F756B; font-family: 'Nunito';">${activity[0]}</h5>` + `<img src="${activity[3].toString()}" class="info-window-image" alt="activity pic" height="120" width="180"></img>`);
         });
     }
 }
@@ -229,7 +227,6 @@ function createMarker(place, id) {
     var type = $('#explore-options').find(":selected").val();
 
     // change marker icon depending on value of selected type
-
     if (type == 'restaurant') {
         icon = 'icons/restaurant.png'
     } else if (type == 'cafe') {
@@ -309,15 +306,12 @@ function sendEmail(contactForm) {
     })
         .then(
             function (response) {
-                console.log("hello");
-                console.log("SUCCESS", response);
                 $(".contact-container").css("display", "block");
                 $(".contact-form").hide();
                 $(".contact-thanks").show();
 
             },
             function (error) {
-                console.log("FAILED", error);
                 $(".contact-container").css("display", "block");
                 $(".contact-form").hide();
                 $(".contact-error").show();
