@@ -213,9 +213,16 @@ Generally, issues that cropped up throughout the build were rectified as / when 
 ## Deployment
 
 **GitPod and GitHub**
-The project was written in GitPod, a new **kids_in_tow** repository was created in GitHub and regular commits were made throughout the project build and pushed out to the repository.
 
-Throughout testing, code was updated / amended and the changes committed and pushed back out to GitHub. 
+Code Institute have provided a full workspace template for GitPod which provides extensions and tools for CI students, available in Code Institute’s GitHub repository. Using the template, I created a new repository in my JooJooBee87 GitHub account called kids_in_tow and then launched GitPod directly from the new repository. 
+
+Launching GitPod from the new repository initialised a new local workspace in GitPod where I was then able to write the code for this project. 
+
+As folders and files were created in the local repository, they were added to the staging area using the command git add filename. The files were then committed to the local repository using the command git commit -m “semantic message for the commit”
+
+The committed files were pushed out to the master branch of the remote repository in GitHub using the command git push. Regular commits were made to the local repository throughout the project build and pushed out to the remote repository in GitHub.
+
+Throughout testing, code was updated / amended and the changes added, committed and pushed back out to GitHub using the above commands.
 
 The code can be run locally in GitPod using the command:
 python3 -m http.server 
